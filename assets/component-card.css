@@ -733,3 +733,39 @@
   margin-top: 10px;
 }
 
+
+/* GUARA MARKET - COMPACTAR COLECCIONES DESKTOP */
+
+@media screen and (min-width: 990px) {
+
+  .featured-collection .page-width,
+  .collection.page-width {
+    max-width: 1500px;
+  }
+
+  .collection .slider--desktop {
+    scroll-padding-left: 0;
+  }
+
+  .collection .slider--desktop .slider__slide {
+    scroll-snap-align: start;
+  }
+
+  .collection slider-component {
+    padding-bottom: 0 !important;
+  }
+
+  .collection .slider-buttons {
+    min-height: 38px;
+    margin-top: 4px !important;
+  }
+
+  .collection .slider-counter {
+    font-size: 12px;
+  }
+
+  .collection .card-wrapper {
+    margin-bottom: 0 !important;
+  }
+}
+
