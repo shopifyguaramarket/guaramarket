@@ -3817,3 +3817,32 @@ details-disclosure > details {
   }
 }
 
+
+/* GUARA MARKET 2026 - COLECCIONES MAS COMPACTAS */
+.featured-collection {
+  overflow: hidden;
+}
+
+.collection {
+  padding-bottom: 2rem;
+}
+
+.collection__title {
+  margin-bottom: 2rem !important;
+}
+
+.collection slider-component {
+  margin-bottom: 0 !important;
+}
+
+.collection .slider-buttons {
+  margin-top: 1rem;
+  min-height: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .collection {
+    padding-bottom: 1.5rem;
+  }
+}
+
