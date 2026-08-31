@@ -3657,3 +3657,49 @@ details-disclosure > details {
     column-gap: 2rem;
   }
 }
+
+/* GUARA MARKET 2026 - HEADER DESKTOP LAYOUT */
+
+@media screen and (min-width: 990px) {
+  .header {
+    grid-template-areas:
+      "heading search icons"
+      "navigation navigation navigation";
+    grid-template-columns: auto minmax(420px, 1fr) auto;
+    align-items: center;
+    column-gap: 2.4rem;
+    row-gap: 1rem;
+  }
+
+  .header__heading,
+  .header__heading-link {
+    grid-area: heading;
+    justify-self: start;
+  }
+
+  .guara-header-search {
+    grid-area: search;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .header__icons {
+    grid-area: icons;
+    justify-self: end;
+  }
+
+  .header__inline-menu {
+    grid-area: navigation;
+    justify-self: center;
+  }
+
+  .header__search {
+    display: none !important;
+  }
+
+  .guara-header-search__form {
+    height: 48px;
+    border-radius: 10px;
+  }
+}
