@@ -3801,3 +3801,22 @@ details-disclosure > details {
   }
 }
 
+
+/* GUARA MARKET 2026 - CENTER SEARCH */
+
+@media screen and (min-width: 990px) {
+  .header {
+    grid-template-columns: 220px minmax(600px, 760px) 220px;
+  }
+
+  .guara-header-search {
+    justify-self: center;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .header__icons {
+    justify-self: end;
+  }
+}
+
