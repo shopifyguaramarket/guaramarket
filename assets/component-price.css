@@ -99,3 +99,25 @@
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
 }
+
+/* GUARA MARKET 2026 - PRECIO COMERCIAL */
+.card-wrapper .price .price-item--sale,
+.card-wrapper .price .price-item--last,
+.card-information .price .price-item--sale,
+.card-information .price .price-item--last {
+  color: #ff8702 !important;
+  font-weight: 750 !important;
+}
+
+.card-wrapper .price--on-sale .price-item--regular,
+.card-information .price--on-sale .price-item--regular {
+  color: #9aa0a6 !important;
+  font-weight: 400 !important;
+}
+
+.card-wrapper .badge,
+.card__badge .badge {
+  background-color: #ff8702 !important;
+  border-color: #ff8702 !important;
+  color: #ffffff !important;
+}
