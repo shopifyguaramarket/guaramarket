@@ -75,6 +75,7 @@
     },
     "custom_liquid_qn4TLX": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "custom_liquid": "<div style=\"overflow:hidden; background-color:#2d6493; white-space:nowrap; padding:10px 0;\"> <div style=\" display:inline-block; animation: scroll-left 20s linear infinite; font-weight: bold; color: #ffffff; font-family: Arial, sans-serif; font-size: 14px; \"> &nbsp;&nbsp;ENVÍOS EN EL DÍA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;SATISFACCIÓN GARANTIZADA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;+10.000 CLIENTES FELICES&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;SOPORTE POR WHATSAPP&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;COMPRA SEGURA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;PAGÁ AL RECIBIR&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;100% CONFIABLE&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp; ENVÍOS EN EL DÍA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;SATISFACCIÓN GARANTIZADA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;+10.000 CLIENTES FELICES&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;SOPORTE POR WHATSAPP&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;COMPRA SEGURA&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;PAGÁ AL RECIBIR&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;100% CONFIABLE&nbsp;&nbsp;&nbsp;&nbsp;• </div> </div> <style> @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } } </style>",
