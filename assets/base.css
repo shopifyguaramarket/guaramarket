@@ -3724,3 +3724,17 @@ details-disclosure > details {
   padding: 12px;
 }
 
+
+.guara-header-search__reset {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0 10px;
+  color: #2D6493;
+}
+
+.guara-header-search__reset.hidden {
+  display: none;
+}
+
