@@ -3685,3 +3685,42 @@ details-disclosure > details {
     display: none !important;
   }
 }
+
+/* GUARA MARKET - PREDICTIVE SEARCH DROPDOWN */
+
+.guara-header-search {
+  position: relative;
+}
+
+.guara-header-search predictive-search {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.guara-header-search .predictive-search {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #ffffff;
+  border: 1px solid #e2e8ee;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  overflow: auto;
+}
+
+.guara-header-search predictive-search:not([open]) .predictive-search {
+  display: none;
+}
+
+.guara-header-search predictive-search[open] .predictive-search {
+  display: block;
+}
+
+.guara-header-search .predictive-search__results-groups-wrapper {
+  padding: 12px;
+}
+
