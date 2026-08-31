@@ -3732,3 +3732,42 @@ details-disclosure > details {
   }
 }
 
+
+/* GUARA MARKET 2026 - HEADER FINAL ALIGNMENT */
+
+@media screen and (min-width: 990px) {
+  .header {
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: 190px minmax(500px, 720px) auto;
+    column-gap: 3rem;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .header__heading {
+    justify-self: start;
+  }
+
+  .header__heading-logo {
+    max-width: 165px;
+    width: 165px;
+  }
+
+  .guara-header-search {
+    width: 100%;
+    max-width: 720px;
+    justify-self: center;
+  }
+
+  .header__icons {
+    justify-self: end;
+    gap: 0.4rem;
+  }
+
+  .header__inline-menu {
+    margin-top: 0;
+  }
+}
+
