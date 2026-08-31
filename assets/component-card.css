@@ -593,3 +593,67 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+/* GUARA MARKET 2026 - PRODUCT CARDS */
+
+.product-card-wrapper .card,
+.card-wrapper .card {
+  height: 100%;
+}
+
+.card--standard > .card__content .card__information {
+  padding-top: 1rem;
+}
+
+.card__heading {
+  min-height: 4.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.card__heading a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.card-information .price {
+  margin-top: 0.6rem;
+}
+
+.price--on-sale .price-item--regular {
+  font-size: 1.3rem;
+  opacity: 0.55;
+}
+
+.price-item--sale,
+.price__regular .price-item--regular {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card__badge .badge {
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.card__inner {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card__media .media img {
+  object-fit: contain;
+}
+
+@media screen and (min-width: 990px) {
+  .collection .grid {
+    row-gap: 3rem;
+  }
+}
+
