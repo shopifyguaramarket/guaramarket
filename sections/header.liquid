@@ -224,6 +224,22 @@
           </localization-form>
         {%- endif -%}
       </div>
+      <div class="guara-header-search small-hide medium-hide">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="guara-header-search__form">
+          <input
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="¿Qué estás buscando?"
+            class="guara-header-search__input"
+            aria-label="Buscar productos"
+          >
+          <button type="submit" class="guara-header-search__button" aria-label="Buscar">
+            <span class="svg-wrapper">{{ 'icon-search.svg' | inline_asset_content }}</span>
+          </button>
+        </form>
+      </div>
+
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}

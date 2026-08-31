@@ -3595,3 +3595,65 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* GUARA MARKET 2026 - HEADER SEARCH */
+
+.guara-header-search {
+  flex: 1;
+  max-width: 620px;
+  margin: 0 2.4rem;
+}
+
+.guara-header-search__form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #d9e1e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.guara-header-search__input {
+  flex: 1;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 1.6rem;
+  font-size: 1.4rem;
+  color: #2D6493;
+  background: transparent;
+}
+
+.guara-header-search__input::placeholder {
+  color: #6f7d89;
+}
+
+.guara-header-search__button {
+  width: 52px;
+  height: 100%;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FF8702;
+  color: #ffffff;
+}
+
+.guara-header-search__button .svg-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+.guara-header-search__button svg {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 990px) {
+  .header {
+    grid-template-columns: auto minmax(320px, 620px) auto;
+    column-gap: 2rem;
+  }
+}
