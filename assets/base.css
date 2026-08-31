@@ -3771,3 +3771,33 @@ details-disclosure > details {
   }
 }
 
+
+/* GUARA MARKET 2026 - HEADER HEIGHT FIX */
+
+@media screen and (min-width: 990px) {
+  .header {
+    min-height: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 6px !important;
+    row-gap: 0 !important;
+  }
+
+  .header__heading-logo {
+    width: 145px !important;
+    max-width: 145px !important;
+  }
+
+  .guara-header-search__form {
+    height: 44px;
+  }
+
+  .header__inline-menu {
+    margin-top: -2px !important;
+  }
+
+  .header__menu-item {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
