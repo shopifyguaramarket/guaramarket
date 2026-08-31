@@ -3738,3 +3738,35 @@ details-disclosure > details {
   display: none;
 }
 
+
+/* GUARA MARKET - MEJORAS PREVIEW BUSCADOR */
+
+.guara-header-search .predictive-search__item {
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.guara-header-search .predictive-search__item:hover {
+  background: #f7f9fb;
+}
+
+.guara-header-search .predictive-search__image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.guara-header-search .predictive-search__item-heading {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.guara-header-search .predictive-search__item-query-result {
+  font-weight: 600;
+}
+
+.guara-header-search .predictive-search__results-groups-wrapper {
+  gap: 20px;
+}
+
