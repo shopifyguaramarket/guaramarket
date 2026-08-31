@@ -3596,12 +3596,10 @@ details-disclosure > details {
   }
 }
 
-/* GUARA MARKET 2026 - HEADER SEARCH */
+/* GUARA MARKET 2026 - HEADER */
 
 .guara-header-search {
-  flex: 1;
-  max-width: 620px;
-  margin: 0 2.4rem;
+  width: 100%;
 }
 
 .guara-header-search__form {
@@ -3609,9 +3607,9 @@ details-disclosure > details {
   align-items: center;
   width: 100%;
   height: 46px;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #d9e1e8;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -3620,166 +3618,43 @@ details-disclosure > details {
   height: 100%;
   border: 0;
   outline: 0;
-  padding: 0 1.6rem;
-  font-size: 1.4rem;
-  color: #2D6493;
+  padding: 0 16px;
+  font-size: 14px;
   background: transparent;
 }
 
-.guara-header-search__input::placeholder {
-  color: #6f7d89;
-}
-
 .guara-header-search__button {
-  width: 52px;
+  width: 54px;
   height: 100%;
   border: 0;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #FF8702;
-  color: #ffffff;
+  color: #fff;
+  cursor: pointer;
 }
-
-.guara-header-search__button .svg-wrapper {
-  width: 20px;
-  height: 20px;
-}
-
-.guara-header-search__button svg {
-  color: #ffffff;
-}
-
-@media screen and (min-width: 990px) {
-  .header {
-    grid-template-columns: auto minmax(320px, 620px) auto;
-    column-gap: 2rem;
-  }
-}
-
-/* GUARA MARKET 2026 - HEADER DESKTOP LAYOUT */
-
-@media screen and (min-width: 990px) {
-  .header {
-    grid-template-areas:
-      "heading search icons"
-      "navigation navigation navigation";
-    grid-template-columns: auto minmax(420px, 1fr) auto;
-    align-items: center;
-    column-gap: 2.4rem;
-    row-gap: 1rem;
-  }
-
-  .header__heading,
-  .header__heading-link {
-    grid-area: heading;
-    justify-self: start;
-  }
-
-  .guara-header-search {
-    grid-area: search;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
-
-  .header__icons {
-    grid-area: icons;
-    justify-self: end;
-  }
-
-  .header__inline-menu {
-    grid-area: navigation;
-    justify-self: center;
-  }
-
-  .header__search {
-    display: none !important;
-  }
-
-  .guara-header-search__form {
-    height: 48px;
-    border-radius: 10px;
-  }
-}
-
-/* GUARA MARKET 2026 - HEADER COMPACT */
-
-@media screen and (min-width: 990px) {
-  .header {
-    padding-top: 14px !important;
-    padding-bottom: 10px !important;
-    row-gap: 0.4rem;
-  }
-
-  .header__heading-logo {
-    max-width: 150px;
-    height: auto;
-  }
-
-  .guara-header-search {
-    max-width: 720px;
-  }
-
-  .header__inline-menu {
-    margin-top: 0.2rem;
-  }
-
-  .header__menu-item {
-    padding-top: 0.7rem;
-    padding-bottom: 0.7rem;
-  }
-}
-
-
-/* GUARA MARKET 2026 - HEADER FINAL ALIGNMENT */
 
 @media screen and (min-width: 990px) {
   .header {
     max-width: 1320px;
     margin: 0 auto;
-    width: 100%;
-    grid-template-columns: 190px minmax(500px, 720px) auto;
-    column-gap: 3rem;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding: 12px 20px 6px !important;
+
+    display: grid;
+    grid-template-areas:
+      "logo search icons"
+      "menu menu menu";
+
+    grid-template-columns: 180px 1fr 180px;
+    column-gap: 30px;
+    row-gap: 4px;
+    align-items: center;
   }
 
   .header__heading {
+    grid-area: logo;
     justify-self: start;
-  }
-
-  .header__heading-logo {
-    max-width: 165px;
-    width: 165px;
-  }
-
-  .guara-header-search {
-    width: 100%;
-    max-width: 720px;
-    justify-self: center;
-  }
-
-  .header__icons {
-    justify-self: end;
-    gap: 0.4rem;
-  }
-
-  .header__inline-menu {
-    margin-top: 0;
-  }
-}
-
-
-/* GUARA MARKET 2026 - HEADER HEIGHT FIX */
-
-@media screen and (min-width: 990px) {
-  .header {
-    min-height: 0 !important;
-    padding-top: 10px !important;
-    padding-bottom: 6px !important;
-    row-gap: 0 !important;
   }
 
   .header__heading-logo {
@@ -3787,68 +3662,25 @@ details-disclosure > details {
     max-width: 145px !important;
   }
 
-  .guara-header-search__form {
-    height: 44px;
-  }
-
-  .header__inline-menu {
-    margin-top: -2px !important;
-  }
-
-  .header__menu-item {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-  }
-}
-
-
-/* GUARA MARKET 2026 - CENTER SEARCH */
-
-@media screen and (min-width: 990px) {
-  .header {
-    grid-template-columns: 220px minmax(600px, 760px) 220px;
-  }
-
-  .guara-header-search {
-    justify-self: center;
-    width: 100%;
-    max-width: 760px;
-  }
-
-  .header__icons {
-    justify-self: end;
-  }
-}
-
-
-/* GUARA MARKET 2026 - SEARCH TRUE CENTER */
-
-@media screen and (min-width: 990px) {
-  .header {
-    position: relative;
-    display: grid;
-    grid-template-areas:
-      "heading search icons"
-      "navigation navigation navigation";
-    grid-template-columns: 220px 1fr 220px !important;
-  }
-
   .guara-header-search {
     grid-area: search;
-    width: 100% !important;
-    max-width: 700px !important;
-    margin: 0 auto !important;
-    justify-self: center !important;
-  }
-
-  .header__heading {
-    grid-area: heading;
-    justify-self: start;
+    width: 100%;
+    max-width: 720px;
+    justify-self: center;
   }
 
   .header__icons {
     grid-area: icons;
     justify-self: end;
   }
-}
 
+  .header__inline-menu {
+    grid-area: menu;
+    justify-self: center;
+    margin: 0 !important;
+  }
+
+  .header__search {
+    display: none !important;
+  }
+}
