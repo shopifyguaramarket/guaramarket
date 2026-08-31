@@ -3820,3 +3820,35 @@ details-disclosure > details {
   }
 }
 
+
+/* GUARA MARKET 2026 - SEARCH TRUE CENTER */
+
+@media screen and (min-width: 990px) {
+  .header {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+      "heading search icons"
+      "navigation navigation navigation";
+    grid-template-columns: 220px 1fr 220px !important;
+  }
+
+  .guara-header-search {
+    grid-area: search;
+    width: 100% !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+    justify-self: center !important;
+  }
+
+  .header__heading {
+    grid-area: heading;
+    justify-self: start;
+  }
+
+  .header__icons {
+    grid-area: icons;
+    justify-self: end;
+  }
+}
+
