@@ -3770,3 +3770,21 @@ details-disclosure > details {
   gap: 20px;
 }
 
+
+/* GUARA MARKET 2026 - TITULOS DE COLECCION */
+.collection__title .title,
+.title-wrapper-with-link .title {
+  font-size: 3.2rem !important;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+  color: #2D6493;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 749px) {
+  .collection__title .title,
+  .title-wrapper-with-link .title {
+    font-size: 2.4rem !important;
+  }
+}
+
