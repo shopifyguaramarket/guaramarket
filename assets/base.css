@@ -3652,7 +3652,8 @@ details-disclosure > details {
     align-items: center;
   }
 
-  .header__heading {
+  .header__heading,
+  .header__heading-link {
     grid-area: logo;
     justify-self: start;
   }
