@@ -200,6 +200,22 @@
       {%- endif -%}
     {%- endif -%}
 
+      <div class="guara-header-search small-hide medium-hide">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="guara-header-search__form">
+          <input
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="¿Qué estás buscando?"
+            class="guara-header-search__input"
+            aria-label="Buscar productos"
+          >
+          <button type="submit" class="guara-header-search__button" aria-label="Buscar">
+            <span class="svg-wrapper">{{ 'icon-search.svg' | inline_asset_content }}</span>
+          </button>
+        </form>
+      </div>
+
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -224,22 +240,6 @@
           </localization-form>
         {%- endif -%}
       </div>
-      <div class="guara-header-search small-hide medium-hide">
-        <form action="{{ routes.search_url }}" method="get" role="search" class="guara-header-search__form">
-          <input
-            type="search"
-            name="q"
-            value="{{ search.terms | escape }}"
-            placeholder="¿Qué estás buscando?"
-            class="guara-header-search__input"
-            aria-label="Buscar productos"
-          >
-          <button type="submit" class="guara-header-search__button" aria-label="Buscar">
-            <span class="svg-wrapper">{{ 'icon-search.svg' | inline_asset_content }}</span>
-          </button>
-        </form>
-      </div>
-
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
       {%- if shop.customer_accounts_enabled -%}
