@@ -64,6 +64,45 @@
       max-width: calc((100% - ({{ section.settings.columns_desktop | minus: 1 }} * var(--grid-desktop-horizontal-spacing))) / {{ section.settings.columns_desktop }});
     }
   }
+
+  @media screen and (min-width: 990px) {
+    #GuaraCategorySlider-{{ section.id }} slider-component {
+      position: relative;
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-buttons {
+      position: static;
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 3px 14px rgba(45, 100, 147, 0.16);
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-button--prev {
+      left: -22px;
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-button--next {
+      right: -22px;
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-button .svg-wrapper {
+      color: #2D6493;
+    }
+
+    #GuaraCategorySlider-{{ section.id }} .slider-button:hover .svg-wrapper {
+      color: #FF8702;
+    }
+  }
+
 {%- endstyle -%}
 
 {%- liquid
@@ -154,10 +193,8 @@
             </span>
           </button>
 
-          <div class="slider-counter caption">
+          <div class="guara-category-slider__counter visually-hidden">
             <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
             <span class="slider-counter--total">{{ section.blocks.size }}</span>
           </div>
 
