@@ -28,6 +28,14 @@
     "guara_category_slider_kmg7et": {
       "type": "guara-category-slider",
       "blocks": {
+        "category_YHmAth": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Diseno_sin_titulo_14.png",
+            "title": "OFERTAS",
+            "link": "shopify://collections"
+          }
+        },
         "category_LH4EWc": {
           "type": "category",
           "settings": {
@@ -86,6 +94,7 @@
         }
       },
       "block_order": [
+        "category_YHmAth",
         "category_LH4EWc",
         "category_xKyLxF",
         "category_aHg4w4",
@@ -101,7 +110,7 @@
         "columns_desktop": 6,
         "columns_mobile": "3",
         "image_size": 120,
-        "image_size_mobile": 75,
+        "image_size_mobile": 80,
         "enable_desktop_slider": true,
         "swipe_on_mobile": true,
         "color_scheme": "",
