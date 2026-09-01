@@ -42,7 +42,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Descripción",
-            "icon": "check_mark",
+            "icon": "none",
             "content": "{{ product.description }}",
             "page": ""
           }
@@ -51,7 +51,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Características",
-            "icon": "check_mark",
+            "icon": "none",
             "content": "<p><strong>Material:</strong> Nylon + elastano</p><p><strong>Tipo de cierre:</strong> Correas ajustables</p><p><strong>Compresión:</strong> Ajustable</p><p><strong>Talla:</strong> Talla única ajustable</p><p><strong>Soporte:</strong> Medio</p><p><strong>Zona de uso:</strong> Rodilla</p>",
             "page": ""
           }
