@@ -31,61 +31,71 @@
         "column_nFcrye": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
-            "title": "Tecnologia",
+            "image": "shopify://shop_images/1_dce546f3-fdcf-42bc-a4aa-e117a04a9150.png",
+            "title": "Auriculares",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/tecnologia"
+            "link": "shopify://collections/auriculares"
           }
         },
         "column_Tk7DzD": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/imgi_10_image_d6ec3613-0573-4dfc-8b1a-3189a0d058b3.jpg",
-            "title": "Belleza",
+            "image": "shopify://shop_images/2_4fb1b4d9-7414-43cc-bbf1-89ba2f5f119a.png",
+            "title": "Smartwachs",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/maquillaje-💋"
+            "link": "shopify://collections/smartwatches"
           }
         },
         "column_tgbwD6": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
-            "title": "Tecnologia",
+            "image": "shopify://shop_images/8.png",
+            "title": "Gaming",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/tecnologia"
+            "link": "shopify://collections/gaming-consolas"
           }
         },
         "column_pebDp4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
-            "title": "Tecnologia",
+            "image": "shopify://shop_images/4_f6fb82d1-276c-46f8-8d79-4288673c7060.png",
+            "title": "Salud",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/tecnologia"
+            "link": "shopify://collections/cuidado-personal"
           }
         },
         "column_AeDjr4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
-            "title": "Tecnologia",
+            "image": "shopify://shop_images/5_11be4e71-9bd7-4d7c-84f6-9fc80af26bfa.png",
+            "title": "Iluminación",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/tecnologia"
+            "link": "shopify://collections/iluminacion"
           }
         },
         "column_LFVU3J": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
-            "title": "Tecnologia",
+            "image": "shopify://shop_images/6_3e78185e-3c48-46ea-8dc7-fafaf8ee268c.png",
+            "title": "Belleza",
             "text": "",
             "link_label": "",
-            "link": "shopify://collections/tecnologia"
+            "link": "shopify://collections/cuidado-capilar"
+          }
+        },
+        "column_wcKPgm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/6_3e78185e-3c48-46ea-8dc7-fafaf8ee268c.png",
+            "title": "Belleza",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/cuidado-capilar"
           }
         }
       },
@@ -95,7 +105,8 @@
         "column_tgbwD6",
         "column_pebDp4",
         "column_AeDjr4",
-        "column_LFVU3J"
+        "column_LFVU3J",
+        "column_wcKPgm"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
