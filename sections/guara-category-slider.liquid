@@ -108,17 +108,20 @@
     #GuaraCategorySlider-{{ section.id }} .guara-category-slider__list.slider {
       display: flex !important;
       flex-wrap: nowrap !important;
-      gap: 12px !important;
+      gap: 10px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      scroll-padding-left: 12px;
     }
 
     #GuaraCategorySlider-{{ section.id }} .guara-category-slider__list.slider .slider__slide {
-      width: calc((100vw - 48px) / {{ section.settings.columns_mobile }}) !important;
-      max-width: calc((100vw - 48px) / {{ section.settings.columns_mobile }}) !important;
-      flex: 0 0 calc((100vw - 48px) / {{ section.settings.columns_mobile }}) !important;
+      width: calc((100vw - 44px) / {{ section.settings.columns_mobile }}) !important;
+      max-width: calc((100vw - 44px) / {{ section.settings.columns_mobile }}) !important;
+      flex: 0 0 calc((100vw - 44px) / {{ section.settings.columns_mobile }}) !important;
     }
 
     #GuaraCategorySlider-{{ section.id }} .guara-category-slider__image-wrap {
-      max-width: 80px !important;
+      max-width: {{ section.settings.image_size_mobile }}px !important;
     }
 
     #GuaraCategorySlider-{{ section.id }} .guara-category-slider__title {
@@ -292,12 +295,22 @@
     {
       "type": "range",
       "id": "image_size",
-      "label": "Tamaño del vector",
+      "label": "Tamaño del vector en escritorio",
       "min": 60,
       "max": 180,
       "step": 10,
       "unit": "px",
       "default": 110
+    },
+    {
+      "type": "range",
+      "id": "image_size_mobile",
+      "label": "Tamaño del vector en móvil",
+      "min": 50,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 75
     },
     {
       "type": "checkbox",
