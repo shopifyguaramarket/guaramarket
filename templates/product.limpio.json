@@ -92,15 +92,15 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
+        "variant_picker",
         "quantity_selector",
         "buy_buttons_zn9zji",
+        "descripcion_desplegable",
+        "vendor",
         "custom_liquid_HXPKRU",
         "releasit_bundle_bundle_block_TrXfEX",
-        "variant_picker",
-        "descripcion_desplegable",
         "releasit_cod_form_button_app_block_FULPV7",
         "releasit_bundle_upsell_block_qHJLhi"
       ],
