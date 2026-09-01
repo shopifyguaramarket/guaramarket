@@ -104,8 +104,8 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "medium",
-        "constrain_to_viewport": true,
+        "media_size": "small",
+        "constrain_to_viewport": false,
         "media_fit": "cover",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
@@ -115,57 +115,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "collapsible_content_WyqWDd": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_TmCqH9": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Cambio y garantía",
-            "icon": "clipboard",
-            "row_content": "<p>En el caso de que su pedido haya llegado en malas condiciones, el usuario debe contactarse con nosotros por los mismos medios dentro de los primeros 5 días (Calendario) desde la recepción del producto para Cambio del producto.</p><p>Nos encargamos de solicitar a AEX el retiro del producto a devolver desde la dirección que nos indique el cliente.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_az3bgU": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Preguntas frecuentes",
-            "icon": "question_mark",
-            "row_content": "<p><strong>¿Cómo realizo el pago?</strong> Disponemos del pago contra entrega, el cual es el método más seguro para que no arriesgues tu dinero, paga solo cuando recibas tu paquete.</p><p><strong>¿Tienen tienda física?</strong> Somos una tienda 100% online, no tenemos tienda física.</p><p><strong>¿Los productos son nuevos?</strong> Todos nuestros productos son nuevos y originales.</p><p><strong>¿Qué pasa si el producto no funciona?</strong> Aceptamos devoluciones.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_eXexAY": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Sobre el envio",
-            "icon": "truck",
-            "row_content": "<p>Todos nuestros envíos son completamente gratuitos y se realizan en un plazo estimado de <strong>2 a 5 días hábiles</strong>.</p><p>Es importante tener en cuenta que los tiempos de entrega pueden variar debido a factores externos. En caso de cualquier demora, te informaremos oportunamente sobre la situación. Sin embargo, estas demoras no generan ninguna responsabilidad para AEX.</p><p>Si necesitas más información sobre el estado de tu pedido, no dudes en contactarnos.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_TmCqH9",
-        "collapsible_row_az3bgU",
-        "collapsible_row_eXexAY"
-      ],
-      "settings": {
-        "caption": "",
-        "heading": "",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "color_scheme": "",
-        "container_color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "related-products": {
@@ -214,12 +163,63 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collapsible_content_WyqWDd": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_TmCqH9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Cambio y garantía",
+            "icon": "clipboard",
+            "row_content": "<p>En el caso de que su pedido haya llegado en malas condiciones, el usuario debe contactarse con nosotros por los mismos medios dentro de los primeros 5 días (Calendario) desde la recepción del producto para Cambio del producto.</p><p>Nos encargamos de solicitar a AEX el retiro del producto a devolver desde la dirección que nos indique el cliente.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_az3bgU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Preguntas frecuentes",
+            "icon": "question_mark",
+            "row_content": "<p><strong>¿Cómo realizo el pago?</strong> Disponemos del pago contra entrega, el cual es el método más seguro para que no arriesgues tu dinero, paga solo cuando recibas tu paquete.</p><p><strong>¿Tienen tienda física?</strong> Somos una tienda 100% online, no tenemos tienda física.</p><p><strong>¿Los productos son nuevos?</strong> Todos nuestros productos son nuevos y originales.</p><p><strong>¿Qué pasa si el producto no funciona?</strong> Aceptamos devoluciones.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eXexAY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Sobre el envio",
+            "icon": "truck",
+            "row_content": "<p>Todos nuestros envíos son completamente gratuitos y se realizan en un plazo estimado de <strong>2 a 5 días hábiles</strong>.</p><p>Es importante tener en cuenta que los tiempos de entrega pueden variar debido a factores externos. En caso de cualquier demora, te informaremos oportunamente sobre la situación. Sin embargo, estas demoras no generan ninguna responsabilidad para AEX.</p><p>Si necesitas más información sobre el estado de tu pedido, no dudes en contactarnos.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_TmCqH9",
+        "collapsible_row_az3bgU",
+        "collapsible_row_eXexAY"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "heading_size": "h0",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
-    "collapsible_content_WyqWDd",
     "related-products",
-    "featured_collection_6kEQ88"
+    "featured_collection_6kEQ88",
+    "collapsible_content_WyqWDd"
   ]
 }
