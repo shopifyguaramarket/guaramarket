@@ -3955,3 +3955,130 @@ details-disclosure > details {
 
 }
 
+
+/* =========================================
+   FIX GUARA MARKET - MEGA MENU DESKTOP
+   ========================================= */
+
+@media screen and (min-width: 990px) {
+
+  /* IMPORTANTE: permitir que el mega menu use todo el ancho */
+  .header__inline-menu > .list-menu--inline > li {
+    position: static !important;
+  }
+
+  .header__inline-menu header-menu {
+    position: static;
+  }
+
+  .header__inline-menu .mega-menu {
+    position: static !important;
+  }
+
+  /* Barra de categorias */
+  .header__inline-menu {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    border-top: 1px solid #edf1f5;
+  }
+
+  .header__inline-menu > .list-menu--inline {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .header__inline-menu .header__menu-item {
+    padding: 15px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #2D6493;
+    white-space: nowrap;
+  }
+
+  .header__inline-menu .header__menu-item:hover,
+  .header__inline-menu details[open] > summary,
+  .header__inline-menu .header__active-menu-item {
+    color: #FF8702;
+    text-decoration: none;
+  }
+
+  /* Mega menu ancho */
+  .mega-menu__content {
+    left: 0 !important;
+    right: 0 !important;
+    top: 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+
+    padding: 24px 40px 28px !important;
+
+    background: #ffffff;
+    border-top: 1px solid #e8edf2;
+    border-bottom: 1px solid #e8edf2;
+
+    box-shadow: 0 10px 25px rgba(20, 55, 90, .10);
+
+    overflow: visible;
+  }
+
+  /* Subcategorias */
+  .mega-menu__list,
+  .header--top-center .mega-menu__list {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(180px, 1fr)) !important;
+    gap: 12px 35px !important;
+    justify-content: start !important;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .header--top-center .mega-menu__list > li {
+    width: auto !important;
+    padding: 0 !important;
+  }
+
+  .mega-menu__list--condensed {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 8px 35px !important;
+  }
+
+  .mega-menu__list--condensed > li {
+    width: auto !important;
+    min-width: 180px;
+  }
+
+  .mega-menu__link {
+    display: block;
+    width: auto;
+    padding: 8px 0;
+    color: #2D6493;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+    text-decoration: none;
+  }
+
+  .mega-menu__link--level-2 {
+    font-weight: 700;
+  }
+
+  .mega-menu__link:hover,
+  .mega-menu__link--active {
+    color: #FF8702;
+    text-decoration: none;
+  }
+
+}
+
