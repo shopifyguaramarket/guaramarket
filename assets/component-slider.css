@@ -375,3 +375,61 @@ slider-component.slider-component-full-width {
 .slider-button--prev:not([disabled]):hover .icon {
   transform: rotate(90deg) scale(1.1);
 }
+
+/* GUARA MARKET 2026 - FLECHAS LATERALES EN COLECCIONES */
+
+@media screen and (min-width: 990px) {
+
+  .collection slider-component {
+    position: relative;
+  }
+
+  .collection .slider-buttons {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    margin: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .collection .slider-counter {
+    display: none !important;
+  }
+
+  .collection .slider-button {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e7ec;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    color: #2D6493;
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  .collection .slider-button--prev {
+    left: 12px;
+  }
+
+  .collection .slider-button--next {
+    right: 12px;
+  }
+
+  .collection .slider-button:not([disabled]):hover {
+    background: #2D6493;
+    color: #ffffff;
+  }
+
+  .collection .slider-button[disabled] {
+    opacity: 0.35;
+  }
+
+  .collection .slider-button .icon {
+    height: 18px;
+  }
+}
+
