@@ -3846,3 +3846,112 @@ details-disclosure > details {
   }
 }
 
+
+/* =========================================
+   GUARA MARKET 2026 - NAVEGACION MARKETPLACE
+   ========================================= */
+
+@media screen and (min-width: 990px) {
+
+  /* Barra principal de categorias */
+  .header__inline-menu {
+    width: 100%;
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    border-top: 1px solid #edf1f5;
+  }
+
+  .header__inline-menu > .list-menu--inline {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+
+  .header__inline-menu > .list-menu--inline > li {
+    position: relative;
+  }
+
+  .header__inline-menu .header__menu-item {
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: #2D6493;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .header__inline-menu .header__menu-item:hover,
+  .header__inline-menu .header__active-menu-item {
+    color: #FF8702;
+    text-decoration: none;
+  }
+
+  .header__inline-menu .header__menu-item .icon-caret {
+    right: 4px;
+    height: 6px;
+  }
+
+  /* Dropdown normal Dawn */
+  .header__submenu.global-settings-popup {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+
+    width: max-content;
+    min-width: 230px;
+    max-width: 320px;
+
+    padding: 10px 0;
+
+    background: #ffffff;
+    border: 1px solid #e5e9ee;
+    border-radius: 0 0 8px 8px;
+
+    box-shadow: 0 10px 30px rgba(21, 54, 86, .12);
+
+    z-index: 30;
+  }
+
+  .header__submenu.list-menu {
+    padding: 8px 0;
+  }
+
+  .header__submenu .header__menu-item {
+    width: 100%;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #2D6493;
+  }
+
+  .header__submenu .header__menu-item:hover {
+    color: #FF8702;
+    background: #f7f9fb;
+  }
+
+  /* Evitar mega panel gigante para submenus simples */
+  .mega-menu__content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .mega-menu__list {
+    gap: 16px 30px;
+  }
+
+  .mega-menu__link {
+    color: #2D6493;
+  }
+
+  .mega-menu__link:hover {
+    color: #FF8702;
+  }
+
+}
+
