@@ -4082,3 +4082,54 @@ details-disclosure > details {
 
 }
 
+
+/* GUARA MARKET - Mega menu compacto */
+@media screen and (min-width: 990px) {
+
+  .mega-menu__content {
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .mega-menu__list,
+  .header--top-center .mega-menu__list {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 0 !important;
+
+    width: 100%;
+    max-width: 1400px;
+    min-height: 64px;
+
+    margin: 0 auto;
+    padding: 0 40px !important;
+  }
+
+  .mega-menu__list > li,
+  .header--top-center .mega-menu__list > li {
+    width: auto !important;
+    padding: 0 !important;
+    margin-right: 64px;
+  }
+
+  .mega-menu__link,
+  .mega-menu__link--level-2 {
+    padding: 21px 0 !important;
+
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+
+    color: #2D6493;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+
+  .mega-menu__link:hover,
+  .mega-menu__link--active {
+    color: #FF8702 !important;
+    text-decoration: none !important;
+  }
+}
