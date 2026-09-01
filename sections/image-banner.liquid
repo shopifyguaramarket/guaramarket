@@ -56,7 +56,7 @@
   class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
 >
   {%- if section.settings.image != blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="banner__media banner__media--desktop media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
         if section.settings.image_2 != blank
@@ -82,6 +82,21 @@
           fetchpriority: fetch_priority
       }}
     </div>
+  {%- if section.settings.image_mobile != blank -%}
+    <div class="banner__media banner__media--mobile media">
+      {{
+        section.settings.image_mobile
+        | image_url: width: 1200
+        | image_tag:
+          loading: 'eager',
+          widths: '375, 550, 750, 900, 1100, 1200',
+          sizes: '100vw',
+          width: section.settings.image_mobile.width,
+          height: section.settings.image_mobile.height
+      }}
+    </div>
+  {%- endif -%}
+
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -166,6 +181,30 @@
   </div>
 </div>
 
+
+<style>
+  /* GUARA MARKET - BANNER DESKTOP / MOBILE */
+  #Banner-{{ section.id }} .banner__media--mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    #Banner-{{ section.id }} .banner__media--desktop {
+      display: {% if section.settings.image_mobile != blank %}none{% else %}block{% endif %};
+    }
+
+    #Banner-{{ section.id }} .banner__media--mobile {
+      display: {% if section.settings.image_mobile != blank %}block{% else %}none{% endif %};
+    }
+
+    #Banner-{{ section.id }} .banner__media--mobile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
@@ -178,7 +217,14 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "t:sections.image-banner.settings.image.label"
+      "label": "Imagen de escritorio",
+      "info": "Recomendado: 1920 × 900 px"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Imagen móvil",
+      "info": "Recomendado: 600 × 480 px. Si no seleccionás una imagen, se usará la imagen de escritorio."
     },
     {
       "type": "image_picker",
