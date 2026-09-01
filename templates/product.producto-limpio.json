@@ -190,12 +190,12 @@
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
-        "title": "",
+        "title": "También te podría interesar.",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "frontpage",
+        "collection": "tecnologia",
         "products_to_show": 25,
         "columns_desktop": 6,
         "full_width": false,
