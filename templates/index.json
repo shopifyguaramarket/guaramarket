@@ -12,9 +12,9 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/guara_Dsktop.png",
+        "image": "shopify://shop_images/Diseno_sin_titulo_15.png",
         "image_mobile": "shopify://shop_images/banner_mobile.png",
-        "desktop_banner_height": 480,
+        "desktop_banner_height": 300,
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
