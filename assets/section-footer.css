@@ -657,3 +657,54 @@
   }
 }
 
+
+/* GUARA MARKET - FOOTER COMPACTO FINAL */
+
+@media screen and (min-width: 750px) {
+  .footer__content-top {
+    padding-top: 30px !important;
+    padding-bottom: 22px !important;
+  }
+
+  .footer__blocks-wrapper {
+    align-items: start !important;
+  }
+
+  .footer-block-image img {
+    max-width: 80px !important;
+  }
+
+  .footer-block--newsletter {
+    margin-top: 10px !important;
+  }
+
+  .footer__list-social {
+    margin-top: 4px !important;
+  }
+
+  .footer__content-bottom {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .footer__content-top {
+    padding-top: 24px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .footer-block.grid__item {
+    margin-bottom: 20px !important;
+  }
+
+  .footer-block-image {
+    margin-bottom: 20px !important;
+  }
+
+  .footer__content-bottom {
+    padding-top: 12px !important;
+    padding-bottom: 14px !important;
+  }
+}
+
