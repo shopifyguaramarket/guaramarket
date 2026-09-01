@@ -14,6 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/guara_Dsktop.png",
         "image_mobile": "shopify://shop_images/banner_mobile.png",
+        "desktop_banner_height": 480,
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
@@ -212,6 +213,7 @@
       "settings": {
         "image": "shopify://shop_images/banner_envio_gratis.png",
         "image_mobile": "shopify://shop_images/envios_gratios.png",
+        "desktop_banner_height": 440,
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
