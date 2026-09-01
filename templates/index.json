@@ -122,12 +122,11 @@
       "type": "guara-offers",
       "name": "🔥 Ofertas Guara",
       "settings": {
-        "promo_label": "🔥 OFERTA SEMANAL",
-        "title": "Precios especiales por tiempo limitado.",
-        "heading_size": "h2",
+        "title": "<strong>Ofertas semanales</strong>",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
-        "description_style": "subtitle",
+        "description_style": "body",
         "collection": "ofertaas",
         "products_to_show": 24,
         "columns_desktop": 6,
@@ -135,7 +134,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -145,7 +144,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 20,
-        "padding_bottom": 0
+        "padding_bottom": 20
       }
     },
     "featured_collection_PATaJw": {
