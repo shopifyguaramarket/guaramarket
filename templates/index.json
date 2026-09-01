@@ -122,7 +122,8 @@
       "type": "guara-offers",
       "name": "🔥 Ofertas Guara",
       "settings": {
-        "title": "<strong>Ofertas semanales</strong>",
+        "promo_label": "🔥 OFERTA SEMANAL",
+        "title": "Precios especiales por tiempo limitado.",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
