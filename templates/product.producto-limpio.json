@@ -190,7 +190,7 @@
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
-        "title": "También te podría interesar.",
+        "title": "También te podría interesar",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -218,8 +218,8 @@
   },
   "order": [
     "main",
+    "featured_collection_6kEQ88",
     "related-products",
-    "collapsible_content_WyqWDd",
-    "featured_collection_6kEQ88"
+    "collapsible_content_WyqWDd"
   ]
 }
