@@ -197,11 +197,35 @@
       display: {% if section.settings.image_mobile != blank %}block{% else %}none{% endif %};
     }
 
-    #Banner-{{ section.id }} .banner__media--mobile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    #Banner-{{ section.id }} .banner__media--mobile {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: {{ section.settings.image_mobile.aspect_ratio }} !important;
+      overflow: hidden;
     }
+
+    #Banner-{{ section.id }} .banner__media--mobile img {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      display: block !important;
+      object-fit: contain !important;
+    }
+
+    {% if section.settings.image_mobile != blank %}
+      #Banner-{{ section.id }}.banner--adapt {
+        height: auto !important;
+        min-height: 0 !important;
+      }
+
+      #Banner-{{ section.id }}.banner--adapt::before,
+      #Banner-{{ section.id }}.banner--adapt .banner__content::before {
+        display: none !important;
+        padding-bottom: 0 !important;
+      }
+    {% endif %}
   }
 </style>
 
