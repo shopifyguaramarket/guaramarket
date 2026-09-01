@@ -33,7 +33,7 @@
           "settings": {
             "image": "shopify://shop_images/Diseno_sin_titulo_14.png",
             "title": "OFERTAS",
-            "link": "shopify://collections"
+            "link": "shopify://collections/ofertaas"
           }
         },
         "category_LH4EWc": {
@@ -116,6 +116,35 @@
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "featured_collection_PcFmjC": {
+      "type": "featured-collection",
+      "name": "Tecnologia",
+      "settings": {
+        "title": "Ofertas semanales",
+        "heading_size": "h1",
+        "description": "<p>Tecnología que te simplifica el día</p>",
+        "show_description": true,
+        "description_style": "subtitle",
+        "collection": "ofertaas",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 0
       }
     },
     "featured_collection_PATaJw": {
@@ -246,6 +275,7 @@
   "order": [
     "image_banner",
     "guara_category_slider_kmg7et",
+    "featured_collection_PcFmjC",
     "featured_collection_PATaJw",
     "featured_collection_wVtTKf",
     "slideshow_ckm9LU",
