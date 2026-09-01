@@ -96,6 +96,243 @@
     }
   }
 
+
+  /* =====================================================
+     GUARA MARKET - OFERTAS SEMANALES V2
+     ===================================================== */
+
+  .guara-offers {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255, 135, 2, .12), transparent 30%),
+      linear-gradient(180deg, #fff8ef 0%, #ffffff 100%);
+    border-top: 4px solid #FF8702;
+    border-bottom: 1px solid rgba(45, 100, 147, .10);
+  }
+
+  .guara-offers::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(255, 135, 2, .06);
+    top: -140px;
+    right: -80px;
+    pointer-events: none;
+  }
+
+  /* Etiqueta superior */
+  .guara-offers__promo {
+    position: relative;
+    z-index: 2;
+    padding-top: 4px;
+    margin-bottom: 8px;
+  }
+
+  .guara-offers__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #FF8702;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
+
+  /* Título */
+  .guara-offers .collection__title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 22px;
+  }
+
+  .guara-offers .collection__title .title {
+    margin-bottom: 6px;
+    color: #2D6493;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+
+  /* Evitar emoji duplicado */
+  .guara-offers .collection__title .title::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .guara-offers .collection__description {
+    max-width: 620px;
+    color: #607486;
+    font-size: 15px;
+  }
+
+  /* Tarjetas */
+  .guara-offers .product-grid .grid__item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .guara-offers .card-wrapper {
+    height: 100%;
+    padding: 10px;
+    border: 1px solid rgba(45, 100, 147, .10);
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 6px 22px rgba(45, 100, 147, .07);
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease,
+      border-color .2s ease;
+  }
+
+  @media screen and (min-width: 990px) {
+    .guara-offers .card-wrapper:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 135, 2, .30);
+      box-shadow: 0 12px 30px rgba(45, 100, 147, .12);
+    }
+  }
+
+  .guara-offers .card__media {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .guara-offers .card__heading {
+    color: #2D6493;
+    font-weight: 700;
+  }
+
+  /* Precios */
+  .guara-offers .price-item--sale,
+  .guara-offers .price__sale .price-item--regular {
+    color: #FF8702 !important;
+    font-weight: 800 !important;
+  }
+
+  .guara-offers .price__sale .price-item--last {
+    color: #FF8702 !important;
+    font-weight: 800 !important;
+  }
+
+  .guara-offers .price__sale s,
+  .guara-offers .price-item--regular {
+    opacity: .55;
+  }
+
+  /* Badge descuento */
+  .guara-offers .card__badge .badge {
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 999px;
+    background: #FF8702;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  /* CTA Ver todos */
+  .guara-offers .collection__view-all {
+    margin-top: 24px;
+  }
+
+  .guara-offers .collection__view-all .button {
+    min-height: 46px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border: none;
+    border-radius: 999px;
+    background: #FF8702;
+    color: #FFFFFF;
+    font-weight: 800;
+    box-shadow: 0 6px 16px rgba(255, 135, 2, .22);
+  }
+
+  .guara-offers .collection__view-all .button::after,
+  .guara-offers .collection__view-all .button::before {
+    box-shadow: none !important;
+  }
+
+  .guara-offers .collection__view-all .button:hover {
+    background: #2D6493;
+  }
+
+  /* Carrusel */
+  .guara-offers__counter {
+    display: none !important;
+  }
+
+  .guara-offers .slider-buttons {
+    min-height: 38px;
+    gap: 28px;
+    margin-top: 8px;
+  }
+
+  /* MOBILE */
+  @media screen and (max-width: 749px) {
+    .guara-offers {
+      border-top-width: 3px;
+    }
+
+    .guara-offers__promo {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      margin-bottom: 9px;
+    }
+
+    .guara-offers__eyebrow {
+      padding: 6px 11px;
+      font-size: 10px;
+    }
+
+    .guara-offers .collection__title {
+      margin-bottom: 14px;
+    }
+
+    .guara-offers .collection__title .title {
+      font-size: 2.2rem;
+      line-height: 1.15;
+    }
+
+    .guara-offers .collection__description {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .guara-offers .card-wrapper {
+      padding: 7px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(45, 100, 147, .07);
+    }
+
+    .guara-offers .card__media {
+      border-radius: 9px;
+    }
+
+    .guara-offers .product-grid.slider--tablet {
+      column-gap: 12px !important;
+    }
+
+    .guara-offers .slider-buttons {
+      margin-top: 10px !important;
+    }
+
+    .guara-offers .collection__view-all {
+      margin-top: 14px;
+    }
+
+    .guara-offers .collection__view-all .button {
+      width: calc(100% - 30px);
+      min-height: 44px;
+      font-size: 13px;
+    }
+  }
+
 {%- endstyle -%}
 
 {%- liquid
@@ -126,6 +363,12 @@
     id="guara-offers-{{ section.id }}"
     data-id="{{ section.id }}"
   >
+    <div class="guara-offers__promo page-width">
+      <span class="guara-offers__eyebrow">
+        {{ section.settings.promo_label }}
+      </span>
+    </div>
+
     <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -266,6 +509,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "promo_label",
+      "label": "Etiqueta promocional",
+      "default": "🔥 OFERTA SEMANAL"
+    },
     {
       "type": "inline_richtext",
       "id": "title",
