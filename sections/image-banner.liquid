@@ -280,6 +280,33 @@
 
 </style>
 
+
+<style>
+  /* GUARA MARKET - ALTURA CONTROLADA EN DESKTOP */
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }} {
+      height: {{ section.settings.desktop_banner_height }}px !important;
+      min-height: {{ section.settings.desktop_banner_height }}px !important;
+    }
+
+    #Banner-{{ section.id }}::before,
+    #Banner-{{ section.id }} .banner__content::before {
+      padding-bottom: 0 !important;
+    }
+
+    #Banner-{{ section.id }} .banner__media {
+      height: 100% !important;
+    }
+
+    #Banner-{{ section.id }} .banner__media img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+    }
+  }
+</style>
+
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
@@ -305,6 +332,16 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "range",
+      "id": "desktop_banner_height",
+      "min": 300,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Altura del banner en escritorio",
+      "default": 460
     },
     {
       "type": "range",
