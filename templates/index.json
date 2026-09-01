@@ -25,6 +25,96 @@
         "show_text_below": false
       }
     },
+    "multicolumn_xA3Hfg": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_nFcrye": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
+            "title": "Tecnologia",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/tecnologia"
+          }
+        },
+        "column_Tk7DzD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/imgi_10_image_d6ec3613-0573-4dfc-8b1a-3189a0d058b3.jpg",
+            "title": "Belleza",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/maquillaje-💋"
+          }
+        },
+        "column_tgbwD6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
+            "title": "Tecnologia",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/tecnologia"
+          }
+        },
+        "column_pebDp4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
+            "title": "Tecnologia",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/tecnologia"
+          }
+        },
+        "column_AeDjr4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
+            "title": "Tecnologia",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/tecnologia"
+          }
+        },
+        "column_LFVU3J": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2026-07-30at00.07.31_1.jpg",
+            "title": "Tecnologia",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/tecnologia"
+          }
+        }
+      },
+      "block_order": [
+        "column_nFcrye",
+        "column_Tk7DzD",
+        "column_tgbwD6",
+        "column_pebDp4",
+        "column_AeDjr4",
+        "column_LFVU3J"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_PATaJw": {
       "type": "featured-collection",
       "name": "Tecnologia",
@@ -57,6 +147,7 @@
   },
   "order": [
     "image_banner",
+    "multicolumn_xA3Hfg",
     "featured_collection_PATaJw"
   ]
 }
