@@ -25,105 +25,87 @@
         "show_text_below": false
       }
     },
-    "multicolumn_xA3Hfg": {
-      "type": "multicolumn",
+    "guara_category_slider_kmg7et": {
+      "type": "guara-category-slider",
       "blocks": {
-        "column_nFcrye": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/1_dce546f3-fdcf-42bc-a4aa-e117a04a9150.png",
-            "title": "Auriculares",
-            "text": "",
-            "link_label": "",
-            "link": "shopify://collections/auriculares"
-          }
-        },
-        "column_Tk7DzD": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/2_4fb1b4d9-7414-43cc-bbf1-89ba2f5f119a.png",
-            "title": "Smartwachs",
-            "text": "",
-            "link_label": "",
-            "link": "shopify://collections/smartwatches"
-          }
-        },
-        "column_tgbwD6": {
-          "type": "column",
+        "category_LH4EWc": {
+          "type": "category",
           "settings": {
             "image": "shopify://shop_images/8.png",
             "title": "Gaming",
-            "text": "",
-            "link_label": "",
             "link": "shopify://collections/gaming-consolas"
           }
         },
-        "column_pebDp4": {
-          "type": "column",
+        "category_xKyLxF": {
+          "type": "category",
           "settings": {
-            "image": "shopify://shop_images/4_f6fb82d1-276c-46f8-8d79-4288673c7060.png",
-            "title": "Salud",
-            "text": "",
-            "link_label": "",
-            "link": "shopify://collections/cuidado-personal"
+            "image": "shopify://shop_images/1_dce546f3-fdcf-42bc-a4aa-e117a04a9150.png",
+            "title": "Auriculares",
+            "link": "shopify://collections/auriculares"
           }
         },
-        "column_AeDjr4": {
-          "type": "column",
+        "category_aHg4w4": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/2_4fb1b4d9-7414-43cc-bbf1-89ba2f5f119a.png",
+            "title": "Smartwahcs",
+            "link": "shopify://collections/smartwatches"
+          }
+        },
+        "category_RHf6xN": {
+          "type": "category",
           "settings": {
             "image": "shopify://shop_images/5_11be4e71-9bd7-4d7c-84f6-9fc80af26bfa.png",
             "title": "Iluminación",
-            "text": "",
-            "link_label": "",
             "link": "shopify://collections/iluminacion"
           }
         },
-        "column_LFVU3J": {
-          "type": "column",
+        "category_hKjGGz": {
+          "type": "category",
           "settings": {
-            "image": "shopify://shop_images/6_3e78185e-3c48-46ea-8dc7-fafaf8ee268c.png",
-            "title": "Belleza",
-            "text": "",
-            "link_label": "",
-            "link": "shopify://collections/cuidado-capilar"
+            "image": "shopify://shop_images/4_f6fb82d1-276c-46f8-8d79-4288673c7060.png",
+            "title": "Salud",
+            "link": "shopify://collections/cuidado-personal"
           }
         },
-        "column_wcKPgm": {
-          "type": "column",
+        "category_RmdJin": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/3_b875a9f6-3a72-4284-9604-d99a726f720b.png",
+            "title": "Belleza",
+            "link": "shopify://collections/maquillaje"
+          }
+        },
+        "category_cUMNKG": {
+          "type": "category",
           "settings": {
             "image": "shopify://shop_images/6_3e78185e-3c48-46ea-8dc7-fafaf8ee268c.png",
-            "title": "Belleza",
-            "text": "",
-            "link_label": "",
+            "title": "Cuidado",
             "link": "shopify://collections/cuidado-capilar"
           }
         }
       },
       "block_order": [
-        "column_nFcrye",
-        "column_Tk7DzD",
-        "column_tgbwD6",
-        "column_pebDp4",
-        "column_AeDjr4",
-        "column_LFVU3J",
-        "column_wcKPgm"
+        "category_LH4EWc",
+        "category_xKyLxF",
+        "category_aHg4w4",
+        "category_RHf6xN",
+        "category_hKjGGz",
+        "category_RmdJin",
+        "category_cUMNKG"
       ],
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Categorías Guara",
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
         "columns_desktop": 6,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
         "columns_mobile": "2",
+        "image_size": 110,
+        "enable_desktop_slider": true,
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "featured_collection_PATaJw": {
@@ -187,7 +169,7 @@
   },
   "order": [
     "image_banner",
-    "multicolumn_xA3Hfg",
+    "guara_category_slider_kmg7et",
     "featured_collection_PATaJw",
     "featured_collection_wVtTKf"
   ]
