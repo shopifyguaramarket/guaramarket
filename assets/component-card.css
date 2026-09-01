@@ -769,3 +769,23 @@
   }
 }
 
+
+/* GUARA MARKET - FEATURED COLLECTION MOBILE */
+@media screen and (max-width: 749px) {
+
+  /* Más separación entre productos */
+  .collection .product-grid.slider--tablet {
+    column-gap: 18px !important;
+  }
+
+  /* Ocultar solamente contador 1/11 */
+  .collection .slider-buttons .slider-counter {
+    display: none !important;
+  }
+
+  /* Mantener flechas con mejor separación */
+  .collection .slider-buttons {
+    gap: 28px;
+    margin-top: 14px !important;
+  }
+}
