@@ -12,7 +12,8 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/Portada_GuaraMarket.jpg",
+        "image": "shopify://shop_images/guara_Dsktop.png",
+        "image_mobile": "shopify://shop_images/guara_Dsktop.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
