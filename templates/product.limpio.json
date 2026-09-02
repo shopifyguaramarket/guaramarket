@@ -14,24 +14,11 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-            "title_color": "#2d6493",
-            "title_size_desktop": 40,
-            "title_size_mobile": 30,
-            "title_weight": "400"
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-            "price_color": "#c4301c",
-            "price_size": 25,
-            "price_weight": "700",
-            "compare_price_color": "#9aafc1",
-            "badge_background": "#c4301c",
-            "badge_text_color": "#ffffff",
-            "badge_radius": 24
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -44,22 +31,6 @@
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
-        },
-        "releasit_bundle_bundle_block_TrXfEX": {
-          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
-          "settings": {
-            "show_quantity_breaks": true,
-            "show_bundles": true,
-            "display_style": "compact",
-            "margin_top": 20,
-            "margin_bottom": 20
-          }
-        },
-        "releasit_cod_form_button_app_block_FULPV7": {
-          "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-          "settings": {
-            "product": "{{product}}"
-          }
         },
         "buy_buttons_zn9zji": {
           "type": "buy_buttons",
@@ -86,7 +57,7 @@
         "caracteristicas_desplegable": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% assign guara_caracteristicas = product.metafields.custom.caracteristicas %}\n\n{% if guara_caracteristicas != blank %}\n  <div class=\"product__accordion accordion quick-add-hidden guara-caracteristicas\">\n    <details>\n      <summary>\n        <div class=\"summary__title\">\n          <h2 class=\"h4 accordion__title inline-richtext\">\n            Características\n          </h2>\n        </div>\n        {{ 'icon-caret.svg' | inline_asset_content }}\n      </summary>\n\n      <div class=\"accordion__content rte\">\n        {{ guara_caracteristicas | metafield_tag }}\n      </div>\n    </details>\n  </div>\n{% endif %}"
+            "custom_liquid": "\n{% assign guara_caracteristicas = product.metafields.custom.caracteristicas %}\n\n{% if guara_caracteristicas != blank %}\n  <div class=\"product__accordion accordion quick-add-hidden guara-caracteristicas\">\n    <details>\n      <summary>\n        <div class=\"summary__title\">\n          <h2 class=\"h4 accordion__title inline-richtext\">\n            Características\n          </h2>\n        </div>\n        {{ 'icon-caret.svg' | inline_asset_content }}\n      </summary>\n\n      <div class=\"accordion__content rte\">\n        {{ guara_caracteristicas | metafield_tag }}\n      </div>\n    </details>\n  </div>\n{% endif %}\n"
           }
         },
         "envios_pagos": {
@@ -123,10 +94,27 @@
             "custom_liquid": "<div class=\"gm-badge\">\n  <div class=\"gm-numero\">#1</div>\n\n  <div class=\"gm-texto\">\n    <div class=\"gm-titulo\">Más vendido en 2026</div>\n    <div class=\"gm-subtitulo\">\n      Elegido por su relación calidad–precio\n    </div>\n  </div>\n</div>\n\n<style>\n.gm-badge{\n    display:flex;\n    align-items:center;\n    gap:12px;\n    padding:10px 14px;\n    border:1px solid #0B3B73;\n    border-radius:10px;\n    overflow:hidden;\n\n    background: linear-gradient(\n        90deg,\n        #FF8C00 0%,\n        #FFD29A 20%,\n        #FFFFFF 50%,\n        #FFD29A 80%,\n        #FF8C00 100%\n    );\n\n    background-size:300% 300%;\n    animation: gmGradient 5s ease infinite;\n}\n\n.gm-numero{\n    background:#0B3B73;\n    color:#ffffff;\n    width:42px;\n    height:42px;\n    border-radius:50%;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n    font-weight:800;\n    flex-shrink:0;\n}\n\n.gm-texto{\n    line-height:1.1;\n}\n\n.gm-titulo{\n    font-size:18px;\n    font-weight:700;\n    color:#0B3B73;\n}\n\n.gm-subtitulo{\n    font-size:13px;\n    font-style:italic;\n    color:#4b4b4b;\n}\n\n@keyframes gmGradient{\n    0%{\n        background-position:0% 50%;\n    }\n    50%{\n        background-position:100% 50%;\n    }\n    100%{\n        background-position:0% 50%;\n    }\n}\n\n@media(max-width:768px){\n\n    .gm-badge{\n        padding:8px 12px;\n    }\n\n    .gm-numero{\n        width:36px;\n        height:36px;\n        font-size:17px;\n    }\n\n    .gm-titulo{\n        font-size:16px;\n    }\n\n    .gm-subtitulo{\n        font-size:12px;\n    }\n}\n</style>"
           }
         },
+        "releasit_bundle_bundle_block_TrXfEX": {
+          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
+          "settings": {
+            "show_quantity_breaks": true,
+            "show_bundles": true,
+            "display_style": "table",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
+        },
+        "releasit_cod_form_button_app_block_FULPV7": {
+          "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {
+            "product": "{{product}}"
+          },
+          "disabled": true
+        },
         "releasit_bundle_upsell_block_qHJLhi": {
           "type": "shopify://apps/releasit-bundle/blocks/upsell-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
           "settings": {
-            "display_position": "above_add_to_cart",
+            "display_position": "below_add_to_cart",
             "max_upsells": 3,
             "margin_top": 15,
             "margin_bottom": 15
@@ -139,19 +127,19 @@
         "variant_picker",
         "quantity_selector",
         "releasit_bundle_bundle_block_TrXfEX",
-        "releasit_cod_form_button_app_block_FULPV7",
         "buy_buttons_zn9zji",
+        "releasit_cod_form_button_app_block_FULPV7",
         "confianza_compra",
         "descripcion_desplegable",
         "caracteristicas_desplegable",
         "envios_pagos",
         "cambio_garantia",
+        "releasit_bundle_upsell_block_qHJLhi",
         "vendor",
-        "custom_liquid_HXPKRU",
-        "releasit_bundle_upsell_block_qHJLhi"
+        "custom_liquid_HXPKRU"
       ],
       "settings": {
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "color_scheme": "scheme-1",
         "media_size": "medium",
         "constrain_to_viewport": true,
@@ -169,85 +157,6 @@
         "guara_whatsapp_border": "#25d366",
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "multicolumn_bAKWe9": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_TJKhHx": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Rodillera_de_comprecion_7.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_wTRB6N": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/1_8.gif",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_f3wyPw": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2026-04-06at17.49.15_1.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_ELr7ej": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/giphy_480x480_aa468ff0-21b4-4b53-b3aa-c81477c0f66d.gif",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_HDckeq": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/WhatsAppImage2025-03-05at17.39.48.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_TJKhHx",
-        "column_wTRB6N",
-        "column_f3wyPw",
-        "column_ELr7ej",
-        "column_HDckeq"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "title": "Beneficios",
-        "heading_size": "h0",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 5,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 16,
-        "padding_bottom": 16
       }
     },
     "related-products": {
@@ -324,7 +233,7 @@
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
-        "title": "También te podría interesar",
+        "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -352,7 +261,6 @@
   },
   "order": [
     "main",
-    "multicolumn_bAKWe9",
     "related-products",
     "collapsible_content_WyqWDd",
     "featured_collection_6kEQ88"
