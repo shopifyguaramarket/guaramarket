@@ -177,6 +177,9 @@
       width: 100%;
       margin: 0 !important;
       min-height: 48px;
+      background: {{ section.settings.guara_buy_bg }} !important;
+      color: {{ section.settings.guara_buy_text }} !important;
+      border-color: {{ section.settings.guara_buy_bg }} !important;
     }
 
     .guara-buy-whatsapp {
@@ -185,10 +188,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #25D366;
+      border: 1px solid {{ section.settings.guara_whatsapp_border }};
       border-radius: 6px;
-      background: #ffffff;
-      color: #159447;
+      background: {{ section.settings.guara_whatsapp_bg }};
+      color: {{ section.settings.guara_whatsapp_text }};
       font-size: 12px;
       font-weight: 700;
       line-height: 1.2;
