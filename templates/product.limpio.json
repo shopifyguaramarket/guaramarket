@@ -243,6 +243,85 @@
         "padding_bottom": 36
       }
     },
+    "multicolumn_6NU8Ct": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_QHg9mh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_8.gif",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tVc6TF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/giphy_480x480_aa468ff0-21b4-4b53-b3aa-c81477c0f66d.gif",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_MF8nJj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2025-03-05at17.39.48.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4Xe6La": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Rodillera_de_comprecion_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_jFjXqA": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2025-03-05at17.39.48.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QHg9mh",
+        "column_tVc6TF",
+        "column_MF8nJj",
+        "column_4Xe6La",
+        "column_jFjXqA"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Beneficios",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
@@ -276,6 +355,7 @@
     "main",
     "related-products",
     "collapsible_content_WyqWDd",
+    "multicolumn_6NU8Ct",
     "featured_collection_6kEQ88"
   ]
 }
