@@ -45,6 +45,12 @@
           "disabled": true,
           "settings": {}
         },
+        "releasit_cod_form_button_app_block_FULPV7": {
+          "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "buy_buttons_zn9zji": {
           "type": "buy_buttons",
           "settings": {
@@ -117,17 +123,10 @@
             "margin_bottom": 20
           }
         },
-        "releasit_cod_form_button_app_block_FULPV7": {
-          "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
-          "disabled": true,
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "releasit_bundle_upsell_block_qHJLhi": {
           "type": "shopify://apps/releasit-bundle/blocks/upsell-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
           "settings": {
-            "display_position": "below_add_to_cart",
+            "display_position": "above_add_to_cart",
             "max_upsells": 3,
             "margin_top": 15,
             "margin_bottom": 15
@@ -139,6 +138,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "releasit_cod_form_button_app_block_FULPV7",
         "buy_buttons_zn9zji",
         "confianza_compra",
         "descripcion_desplegable",
@@ -148,11 +148,10 @@
         "vendor",
         "custom_liquid_HXPKRU",
         "releasit_bundle_bundle_block_TrXfEX",
-        "releasit_cod_form_button_app_block_FULPV7",
         "releasit_bundle_upsell_block_qHJLhi"
       ],
       "settings": {
-        "enable_sticky_info": false,
+        "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",
         "constrain_to_viewport": true,
@@ -198,7 +197,27 @@
         "column_f3wyPw": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Rodillera_de_comprecion_7.jpg",
+            "image": "shopify://shop_images/WhatsAppImage2026-04-06at17.49.15_1.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ELr7ej": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/giphy_480x480_aa468ff0-21b4-4b53-b3aa-c81477c0f66d.gif",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_HDckeq": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/WhatsAppImage2025-03-05at17.39.48.jpg",
             "title": "",
             "text": "",
             "link_label": "",
@@ -209,24 +228,26 @@
       "block_order": [
         "column_TJKhHx",
         "column_wTRB6N",
-        "column_f3wyPw"
+        "column_f3wyPw",
+        "column_ELr7ej",
+        "column_HDckeq"
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Varias columnas",
-        "heading_size": "h1",
+        "title": "Beneficios",
+        "heading_size": "h0",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 6,
-        "column_alignment": "left",
+        "columns_desktop": 5,
+        "column_alignment": "center",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
         "color_scheme": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "related-products": {
@@ -303,7 +324,7 @@
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
-        "title": "",
+        "title": "También te podría interesar",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
