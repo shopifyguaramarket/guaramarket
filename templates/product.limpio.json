@@ -1,6 +1,10 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -34,6 +38,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "confianza_compra": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"guara-pdp-trust\">\n  <div class=\"guara-pdp-trust__item\">\n    <span>🚚</span>\n    <strong>Envíos</strong>\n    <small>Todo Paraguay</small>\n  </div>\n\n  <div class=\"guara-pdp-trust__item\">\n    <span>💳</span>\n    <strong>Pagá al recibir</strong>\n    <small>Compra simple</small>\n  </div>\n\n  <div class=\"guara-pdp-trust__item\">\n    <span>✓</span>\n    <strong>Compra segura</strong>\n    <small>Con respaldo</small>\n  </div>\n</div>\n\n<style>\n.guara-pdp-trust{\n  display:grid;\n  grid-template-columns:repeat(3,1fr);\n  margin:8px 0 6px;\n  border:1px solid rgba(45,100,147,.18);\n  border-radius:8px;\n  overflow:hidden;\n  background:#fff;\n}\n\n.guara-pdp-trust__item{\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  justify-content:center;\n  text-align:center;\n  min-height:72px;\n  padding:8px;\n  color:#2D6493;\n  border-right:1px solid rgba(45,100,147,.14);\n}\n\n.guara-pdp-trust__item:last-child{\n  border-right:0;\n}\n\n.guara-pdp-trust__item span{\n  font-size:17px;\n  line-height:1;\n  margin-bottom:4px;\n}\n\n.guara-pdp-trust__item strong{\n  font-size:12px;\n  line-height:1.2;\n}\n\n.guara-pdp-trust__item small{\n  font-size:10px;\n  opacity:.75;\n  margin-top:2px;\n}\n\n@media(max-width:749px){\n  .guara-pdp-trust__item{\n    min-height:64px;\n    padding:7px 4px;\n  }\n\n  .guara-pdp-trust__item strong{\n    font-size:11px;\n  }\n\n  .guara-pdp-trust__item small{\n    font-size:9px;\n  }\n}\n</style>"
+          }
+        },
         "descripcion_desplegable": {
           "type": "collapsible_tab",
           "settings": {
@@ -49,6 +59,24 @@
             "heading": "Características",
             "icon": "none",
             "content": "<p><strong>Material:</strong> Nylon + elastano</p><p><strong>Tipo de cierre:</strong> Correas ajustables</p><p><strong>Compresión:</strong> Ajustable</p><p><strong>Talla:</strong> Talla única ajustable</p><p><strong>Soporte:</strong> Medio</p><p><strong>Zona de uso:</strong> Rodilla</p>",
+            "page": ""
+          }
+        },
+        "envios_pagos": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envíos y pagos",
+            "icon": "none",
+            "content": "<p><strong>Envíos:</strong> Realizamos entregas a todo Paraguay.</p><p><strong>Pago:</strong> Podés pagar al recibir o por transferencia.</p>",
+            "page": ""
+          }
+        },
+        "cambio_garantia": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Cambio y garantía",
+            "icon": "none",
+            "content": "<p>Si recibís un producto con inconvenientes, contactanos dentro de los primeros 5 días desde la recepción para gestionar el cambio.</p>",
             "page": ""
           }
         },
@@ -94,30 +122,6 @@
             "margin_top": 15,
             "margin_bottom": 15
           }
-        },
-        "confianza_compra": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "\n<div class=\"guara-pdp-trust\">\n  <div class=\"guara-pdp-trust__item\">\n    <span>🚚</span>\n    <strong>Envíos</strong>\n    <small>Todo Paraguay</small>\n  </div>\n\n  <div class=\"guara-pdp-trust__item\">\n    <span>💳</span>\n    <strong>Pagá al recibir</strong>\n    <small>Compra simple</small>\n  </div>\n\n  <div class=\"guara-pdp-trust__item\">\n    <span>✓</span>\n    <strong>Compra segura</strong>\n    <small>Con respaldo</small>\n  </div>\n</div>\n\n<style>\n.guara-pdp-trust{\n  display:grid;\n  grid-template-columns:repeat(3,1fr);\n  margin:8px 0 6px;\n  border:1px solid rgba(45,100,147,.18);\n  border-radius:8px;\n  overflow:hidden;\n  background:#fff;\n}\n\n.guara-pdp-trust__item{\n  display:flex;\n  flex-direction:column;\n  align-items:center;\n  justify-content:center;\n  text-align:center;\n  min-height:72px;\n  padding:8px;\n  color:#2D6493;\n  border-right:1px solid rgba(45,100,147,.14);\n}\n\n.guara-pdp-trust__item:last-child{\n  border-right:0;\n}\n\n.guara-pdp-trust__item span{\n  font-size:17px;\n  line-height:1;\n  margin-bottom:4px;\n}\n\n.guara-pdp-trust__item strong{\n  font-size:12px;\n  line-height:1.2;\n}\n\n.guara-pdp-trust__item small{\n  font-size:10px;\n  opacity:.75;\n  margin-top:2px;\n}\n\n@media(max-width:749px){\n  .guara-pdp-trust__item{\n    min-height:64px;\n    padding:7px 4px;\n  }\n\n  .guara-pdp-trust__item strong{\n    font-size:11px;\n  }\n\n  .guara-pdp-trust__item small{\n    font-size:9px;\n  }\n}\n</style>\n"
-          }
-        },
-        "envios_pagos": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Envíos y pagos",
-            "icon": "none",
-            "content": "<p><strong>Envíos:</strong> Realizamos entregas a todo Paraguay.</p><p><strong>Pago:</strong> Podés pagar al recibir o por transferencia.</p>",
-            "page": ""
-          }
-        },
-        "cambio_garantia": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Cambio y garantía",
-            "icon": "none",
-            "content": "<p>Si recibís un producto con inconvenientes, contactanos dentro de los primeros 5 días desde la recepción para gestionar el cambio.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -149,6 +153,11 @@
         "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": false,
+        "guara_buy_bg": "#2d6493",
+        "guara_buy_text": "#ffffff",
+        "guara_whatsapp_bg": "#25D366",
+        "guara_whatsapp_text": "#FFFFFF",
+        "guara_whatsapp_border": "#25d366",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -208,6 +217,7 @@
         "collapsible_row_az3bgU",
         "collapsible_row_eXexAY"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "",
@@ -221,8 +231,7 @@
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
-      },
-      "disabled": true
+      }
     },
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
