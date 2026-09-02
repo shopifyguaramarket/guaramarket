@@ -50,9 +50,9 @@
           "settings": {
             "show_quantity_breaks": true,
             "show_bundles": true,
-            "display_style": "table",
-            "margin_top": 20,
-            "margin_bottom": 20
+            "display_style": "cards",
+            "margin_top": 15,
+            "margin_bottom": 15
           }
         },
         "buy_buttons_zn9zji": {
@@ -168,7 +168,7 @@
         "guara_whatsapp_bg": "#25d366",
         "guara_whatsapp_text": "#ffffff",
         "guara_whatsapp_border": "#25d366",
-        "padding_top": 36,
+        "padding_top": 20,
         "padding_bottom": 12
       }
     },
