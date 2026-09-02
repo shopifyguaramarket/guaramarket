@@ -1492,3 +1492,42 @@ a.product__text {
     border: none;
   }
 }
+
+/* ==========================================================
+   GUARA MARKET - PDP TITLE / PRICE EDITABLE
+   ========================================================== */
+
+.guara-product-title h1 {
+  color: var(--guara-title-color);
+  font-size: var(--guara-title-size-desktop);
+  font-weight: var(--guara-title-weight);
+  line-height: 1.12;
+}
+
+.guara-product-price .price-item {
+  font-size: var(--guara-price-size);
+}
+
+.guara-product-price .price-item--regular,
+.guara-product-price .price-item--sale {
+  color: var(--guara-price-current);
+  font-weight: var(--guara-price-weight);
+}
+
+.guara-product-price .price--on-sale .price-item--regular {
+  color: var(--guara-price-old);
+  font-weight: 400;
+}
+
+.guara-product-price .price__badge-sale {
+  background: var(--guara-badge-bg) !important;
+  color: var(--guara-badge-text) !important;
+  border-color: var(--guara-badge-bg) !important;
+  border-radius: var(--guara-badge-radius) !important;
+}
+
+@media screen and (max-width: 749px) {
+  .guara-product-title h1 {
+    font-size: var(--guara-title-size-mobile);
+  }
+}

@@ -97,7 +97,16 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <div class="product__title" {{ block.shopify_attributes }}>
+                <div
+                  class="product__title guara-product-title"
+                  style="
+                    --guara-title-color: {{ block.settings.title_color }};
+                    --guara-title-size-desktop: {{ block.settings.title_size_desktop }}px;
+                    --guara-title-size-mobile: {{ block.settings.title_size_mobile }}px;
+                    --guara-title-weight: {{ block.settings.title_weight }};
+                  "
+                  {{ block.shopify_attributes }}
+                >
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
@@ -106,7 +115,21 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div
+                  id="price-{{ section.id }}"
+                  class="guara-product-price"
+                  role="status"
+                  style="
+                    --guara-price-current: {{ block.settings.price_color }};
+                    --guara-price-old: {{ block.settings.compare_price_color }};
+                    --guara-price-size: {{ block.settings.price_size }}px;
+                    --guara-price-weight: {{ block.settings.price_weight }};
+                    --guara-badge-bg: {{ block.settings.badge_background }};
+                    --guara-badge-text: {{ block.settings.badge_text_color }};
+                    --guara-badge-radius: {{ block.settings.badge_radius }}px;
+                  "
+                  {{ block.shopify_attributes }}
+                >
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -768,12 +791,142 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Color del título",
+          "default": "#2D6493"
+        },
+        {
+          "type": "range",
+          "id": "title_size_desktop",
+          "min": 24,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño en computadora",
+          "default": 40
+        },
+        {
+          "type": "range",
+          "id": "title_size_mobile",
+          "min": 20,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño en celular",
+          "default": 30
+        },
+        {
+          "type": "select",
+          "id": "title_weight",
+          "label": "Grosor del título",
+          "options": [
+            {
+              "value": "400",
+              "label": "Normal"
+            },
+            {
+              "value": "500",
+              "label": "Medio"
+            },
+            {
+              "value": "600",
+              "label": "Semibold"
+            },
+            {
+              "value": "700",
+              "label": "Negrita"
+            }
+          ],
+          "default": "400"
+        }
+      ]
     },
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Precio actual"
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Color precio actual",
+          "default": "#2D6493"
+        },
+        {
+          "type": "range",
+          "id": "price_size",
+          "min": 14,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño del precio",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "price_weight",
+          "label": "Grosor del precio",
+          "options": [
+            {
+              "value": "400",
+              "label": "Normal"
+            },
+            {
+              "value": "500",
+              "label": "Medio"
+            },
+            {
+              "value": "600",
+              "label": "Semibold"
+            },
+            {
+              "value": "700",
+              "label": "Negrita"
+            }
+          ],
+          "default": "700"
+        },
+        {
+          "type": "color",
+          "id": "compare_price_color",
+          "label": "Color precio anterior",
+          "default": "#9AAFC1"
+        },
+        {
+          "type": "header",
+          "content": "Etiqueta descuento"
+        },
+        {
+          "type": "color",
+          "id": "badge_background",
+          "label": "Fondo descuento",
+          "default": "#FF8702"
+        },
+        {
+          "type": "color",
+          "id": "badge_text_color",
+          "label": "Texto descuento",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "range",
+          "id": "badge_radius",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Redondeado descuento",
+          "default": 16
+        }
+      ]
     },
     {
       "type": "sku",
