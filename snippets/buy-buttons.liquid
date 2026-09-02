@@ -224,3 +224,33 @@
     }
   </style>
 {%- endif -%}
+
+{%- if template.suffix == 'limpio' -%}
+  <style>
+    /* GUARA PDP LIMPIA - Releasit como compra principal */
+    .product-form__buttons:has(.guara-buy-whatsapp) .product-form__submit {
+      display: none !important;
+    }
+
+    .product-form__buttons:has(.guara-buy-whatsapp) {
+      display: flex !important;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .product-form__buttons:has(.guara-buy-whatsapp) .guara-buy-whatsapp {
+      width: auto !important;
+      min-width: 190px;
+      max-width: 230px;
+      min-height: 46px;
+      padding: 0 22px;
+    }
+
+    @media screen and (max-width: 749px) {
+      .product-form__buttons:has(.guara-buy-whatsapp) .guara-buy-whatsapp {
+        width: 100% !important;
+        max-width: none;
+      }
+    }
+  </style>
+{%- endif -%}
