@@ -97,6 +97,14 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
+                {%- if product.compare_at_price_max > product.price -%}
+                  {%- assign guara_discount_amount = product.compare_at_price_max | minus: product.price -%}
+                  {%- assign guara_discount_percent = guara_discount_amount | times: 100.0 | divided_by: product.compare_at_price_max | round -%}
+                  <div class="guara-pdp-discount">
+                    -{{ guara_discount_percent }}% OFF
+                  </div>
+                {%- endif -%}
+
                 <div
                   class="product__title guara-product-title"
                   style="
@@ -133,7 +141,7 @@
                   {%- render 'price',
                     product: product,
                     use_variant: true,
-                    show_badges: true,
+                    show_badges: false,
                     price_class: 'price--large'
                   -%}
                 </div>

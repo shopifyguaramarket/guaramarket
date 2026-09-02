@@ -1531,3 +1531,28 @@ a.product__text {
     font-size: var(--guara-title-size-mobile);
   }
 }
+
+/* GUARA MARKET - DESCUENTO ARRIBA DEL TITULO */
+.guara-pdp-discount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 7px 12px;
+  background: #FF8702;
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 749px) {
+  .guara-pdp-discount {
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
