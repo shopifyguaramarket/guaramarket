@@ -29,7 +29,7 @@
             "price_weight": "700",
             "compare_price_color": "#9aafc1",
             "badge_background": "#c4301c",
-            "badge_text_color": "#FFFFFF",
+            "badge_text_color": "#ffffff",
             "badge_radius": 24
           }
         },
@@ -44,6 +44,16 @@
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
+        },
+        "releasit_bundle_bundle_block_TrXfEX": {
+          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
+          "settings": {
+            "show_quantity_breaks": true,
+            "show_bundles": true,
+            "display_style": "compact",
+            "margin_top": 20,
+            "margin_bottom": 20
+          }
         },
         "releasit_cod_form_button_app_block_FULPV7": {
           "type": "shopify://apps/releasit-cod-form/blocks/button-app-block/72faf214-4174-4fec-886b-0d0e8d3af9a2",
@@ -113,16 +123,6 @@
             "custom_liquid": "<div class=\"gm-badge\">\n  <div class=\"gm-numero\">#1</div>\n\n  <div class=\"gm-texto\">\n    <div class=\"gm-titulo\">Más vendido en 2026</div>\n    <div class=\"gm-subtitulo\">\n      Elegido por su relación calidad–precio\n    </div>\n  </div>\n</div>\n\n<style>\n.gm-badge{\n    display:flex;\n    align-items:center;\n    gap:12px;\n    padding:10px 14px;\n    border:1px solid #0B3B73;\n    border-radius:10px;\n    overflow:hidden;\n\n    background: linear-gradient(\n        90deg,\n        #FF8C00 0%,\n        #FFD29A 20%,\n        #FFFFFF 50%,\n        #FFD29A 80%,\n        #FF8C00 100%\n    );\n\n    background-size:300% 300%;\n    animation: gmGradient 5s ease infinite;\n}\n\n.gm-numero{\n    background:#0B3B73;\n    color:#ffffff;\n    width:42px;\n    height:42px;\n    border-radius:50%;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    font-size:20px;\n    font-weight:800;\n    flex-shrink:0;\n}\n\n.gm-texto{\n    line-height:1.1;\n}\n\n.gm-titulo{\n    font-size:18px;\n    font-weight:700;\n    color:#0B3B73;\n}\n\n.gm-subtitulo{\n    font-size:13px;\n    font-style:italic;\n    color:#4b4b4b;\n}\n\n@keyframes gmGradient{\n    0%{\n        background-position:0% 50%;\n    }\n    50%{\n        background-position:100% 50%;\n    }\n    100%{\n        background-position:0% 50%;\n    }\n}\n\n@media(max-width:768px){\n\n    .gm-badge{\n        padding:8px 12px;\n    }\n\n    .gm-numero{\n        width:36px;\n        height:36px;\n        font-size:17px;\n    }\n\n    .gm-titulo{\n        font-size:16px;\n    }\n\n    .gm-subtitulo{\n        font-size:12px;\n    }\n}\n</style>"
           }
         },
-        "releasit_bundle_bundle_block_TrXfEX": {
-          "type": "shopify://apps/releasit-bundle/blocks/bundle-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
-          "settings": {
-            "show_quantity_breaks": true,
-            "show_bundles": true,
-            "display_style": "table",
-            "margin_top": 20,
-            "margin_bottom": 20
-          }
-        },
         "releasit_bundle_upsell_block_qHJLhi": {
           "type": "shopify://apps/releasit-bundle/blocks/upsell-block/019c9545-b89c-75b6-a4e1-5c7cd764ca36",
           "settings": {
@@ -138,6 +138,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "releasit_bundle_bundle_block_TrXfEX",
         "releasit_cod_form_button_app_block_FULPV7",
         "buy_buttons_zn9zji",
         "confianza_compra",
@@ -147,7 +148,6 @@
         "cambio_garantia",
         "vendor",
         "custom_liquid_HXPKRU",
-        "releasit_bundle_bundle_block_TrXfEX",
         "releasit_bundle_upsell_block_qHJLhi"
       ],
       "settings": {
