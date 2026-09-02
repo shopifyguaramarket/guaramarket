@@ -100,7 +100,29 @@
                 {%- if product.compare_at_price_max > product.price -%}
                   {%- assign guara_discount_amount = product.compare_at_price_max | minus: product.price -%}
                   {%- assign guara_discount_percent = guara_discount_amount | times: 100.0 | divided_by: product.compare_at_price_max | round -%}
-                  <div class="guara-pdp-discount">
+                  {%- liquid
+                    assign guara_badge_bg = '#FF8702'
+                    assign guara_badge_text = '#FFFFFF'
+                    assign guara_badge_radius = 16
+
+                    for guara_block in section.blocks
+                      if guara_block.type == 'price'
+                        assign guara_badge_bg = guara_block.settings.badge_background
+                        assign guara_badge_text = guara_block.settings.badge_text_color
+                        assign guara_badge_radius = guara_block.settings.badge_radius
+                        break
+                      endif
+                    endfor
+                  -%}
+
+                  <div
+                    class="guara-pdp-discount"
+                    style="
+                      background: {{ guara_badge_bg }};
+                      color: {{ guara_badge_text }};
+                      border-radius: {{ guara_badge_radius }}px;
+                    "
+                  >
                     -{{ guara_discount_percent }}% OFF
                   </div>
                 {%- endif -%}
