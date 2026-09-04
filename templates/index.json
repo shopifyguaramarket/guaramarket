@@ -221,7 +221,7 @@
         "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
         "image_mobile": "shopify://shop_images/banner_envio_gratis.png",
         "desktop_height_mode": "adapt",
-        "desktop_height": 400,
+        "desktop_height": 800,
         "desktop_fit": "cover",
         "desktop_position": "center center",
         "mobile_height_mode": "adapt",
