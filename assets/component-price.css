@@ -121,3 +121,53 @@
   border-color: #C4301C !important;
   color: #ffffff !important;
 }
+
+/* GUARA MARKET - BADGES DE DESCUENTO DESTACADOS */
+.card-wrapper .badge,
+.card__badge .badge {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  padding: 7px 12px !important;
+  min-height: 30px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: .2px;
+  animation: guaraDiscountPulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes guaraDiscountPulse {
+  0%,
+  78%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(196, 48, 28, 0);
+  }
+
+  86% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 5px rgba(196, 48, 28, .12);
+  }
+
+  93% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 2px rgba(196, 48, 28, .06);
+  }
+}
+
+@media (max-width: 749px) {
+  .card-wrapper .badge,
+  .card__badge .badge {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    min-height: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-wrapper .badge,
+  .card__badge .badge {
+    animation: none !important;
+  }
+}
