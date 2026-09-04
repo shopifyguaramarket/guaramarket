@@ -12,6 +12,10 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
+        "banner_container": "full",
+        "desktop_image_fit": "cover",
+        "mobile_image_fit": "cover",
+        "banner_background_color": "#ffffff",
         "image": "shopify://shop_images/Diseno_sin_titulo_15.png",
         "image_mobile": "shopify://shop_images/banner_mobile.png",
         "desktop_banner_height": 300,
@@ -211,6 +215,10 @@
     "image_banner_d76JPk": {
       "type": "image-banner",
       "settings": {
+        "banner_container": "full",
+        "desktop_image_fit": "cover",
+        "mobile_image_fit": "cover",
+        "banner_background_color": "#ffffff",
         "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
         "image_mobile": "shopify://shop_images/envios_gratios.png",
         "desktop_banner_height": 600,
@@ -253,6 +261,28 @@
         "swipe_on_mobile": true,
         "padding_top": 20,
         "padding_bottom": 16
+      }
+    },
+    "guara_banner_premium_dawikE": {
+      "type": "guara-banner-premium",
+      "name": "Guara Banner Premium",
+      "settings": {
+        "container_width": "contained",
+        "max_width": 1000,
+        "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
+        "image_mobile": "shopify://shop_images/banner_envio_gratis.png",
+        "desktop_height_mode": "adapt",
+        "desktop_height": 400,
+        "desktop_fit": "cover",
+        "desktop_position": "center center",
+        "mobile_height_mode": "adapt",
+        "mobile_height": 420,
+        "mobile_fit": "cover",
+        "mobile_position": "center center",
+        "background_color": "#2D6493",
+        "overlay_opacity": 0,
+        "link": "",
+        "accessibility_label": "Banner promocional"
       }
     },
     "featured_collection_WdPzDR": {
@@ -303,6 +333,7 @@
     "featured_collection_wVtTKf",
     "image_banner_d76JPk",
     "featured_collection_WbTdfH",
+    "guara_banner_premium_dawikE",
     "featured_collection_WdPzDR",
     "custom_liquid_kJJ9eJ"
   ]
