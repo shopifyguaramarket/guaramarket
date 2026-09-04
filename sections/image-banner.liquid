@@ -31,6 +31,45 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+
+  /* GUARA MARKET - CONTROLES NATIVOS DEL BANNER */
+  @media screen and (min-width: 750px) {
+
+    #Banner-{{ section.id }}.guara-banner--contained {
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    {% if section.settings.image_height != 'adapt' %}
+      #Banner-{{ section.id }} {
+        min-height: {{ section.settings.desktop_banner_height }}px;
+        height: {{ section.settings.desktop_banner_height }}px;
+      }
+
+      #Banner-{{ section.id }}::before,
+      #Banner-{{ section.id }} .banner__media::before,
+      #Banner-{{ section.id }} .banner__content::before {
+        padding-bottom: 0;
+      }
+    {% endif %}
+
+    #Banner-{{ section.id }} .banner__media--desktop img {
+      width: 100%;
+      height: 100%;
+      object-fit: {{ section.settings.desktop_image_fit }};
+      object-position: center center;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #Banner-{{ section.id }} .banner__media--mobile img {
+      width: 100%;
+      height: 100%;
+      object-fit: {{ section.settings.mobile_image_fit }};
+      object-position: center center;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -57,7 +96,7 @@
 
 <div
   id="Banner-{{ section.id }}"
-  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  class="banner guara-banner--{{ section.settings.banner_container }} guara-banner--fit-{{ section.settings.desktop_image_fit }} banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
 >
   {%- if section.settings.image != blank -%}
     <div class="banner__media banner__media--desktop media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
@@ -213,6 +252,54 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "select",
+      "id": "banner_container",
+      "label": "Recipiente",
+      "options": [
+        {
+          "value": "full",
+          "label": "Ancho completo"
+        },
+        {
+          "value": "contained",
+          "label": "Contenido limitado"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_fit",
+      "label": "Ajuste de imagen en escritorio",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cubrir"
+        },
+        {
+          "value": "contain",
+          "label": "Contener"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_fit",
+      "label": "Ajuste de imagen en móvil",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cubrir"
+        },
+        {
+          "value": "contain",
+          "label": "Contener"
+        }
+      ],
+      "default": "cover"
+    },
     {
       "type": "color",
       "id": "banner_background_color",
