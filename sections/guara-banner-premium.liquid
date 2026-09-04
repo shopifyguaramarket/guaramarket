@@ -1,0 +1,391 @@
+{%- liquid
+  assign desktop_image = section.settings.image
+  assign mobile_image = section.settings.image_mobile
+
+  assign desktop_ratio = 2.1333
+  if desktop_image != blank
+    assign desktop_ratio = desktop_image.aspect_ratio
+  endif
+
+  assign mobile_ratio = desktop_ratio
+  if mobile_image != blank
+    assign mobile_ratio = mobile_image.aspect_ratio
+  endif
+-%}
+
+<section
+  id="GuaraBanner-{{ section.id }}"
+  class="guara-banner guara-banner--{{ section.settings.container_width }}"
+  style="
+    --guara-banner-bg: {{ section.settings.background_color }};
+    --guara-banner-desktop-height: {{ section.settings.desktop_height }}px;
+    --guara-banner-mobile-height: {{ section.settings.mobile_height }}px;
+    --guara-banner-desktop-ratio: {{ desktop_ratio }};
+    --guara-banner-mobile-ratio: {{ mobile_ratio }};
+    --guara-banner-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+  "
+>
+  <div class="guara-banner__outer">
+    {%- if section.settings.link != blank -%}
+      <a
+        class="guara-banner__link"
+        href="{{ section.settings.link }}"
+        aria-label="{{ section.settings.accessibility_label | escape }}"
+      >
+    {%- endif -%}
+
+    <div
+      class="
+        guara-banner__media
+        guara-banner__media--desktop
+        guara-banner__media--{{ section.settings.desktop_height_mode }}
+      "
+    >
+      {%- if desktop_image != blank -%}
+        {{
+          desktop_image
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            widths: '750, 1100, 1500, 1920, 2560, 3200, 3840',
+            sizes: '100vw',
+            class: 'guara-banner__image guara-banner__image--desktop',
+            alt: desktop_image.alt
+        }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'guara-banner__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div
+      class="
+        guara-banner__media
+        guara-banner__media--mobile
+        guara-banner__media--{{ section.settings.mobile_height_mode }}
+      "
+    >
+      {%- assign selected_mobile = mobile_image | default: desktop_image -%}
+
+      {%- if selected_mobile != blank -%}
+        {{
+          selected_mobile
+          | image_url: width: 1600
+          | image_tag:
+            loading: 'lazy',
+            widths: '375, 550, 750, 900, 1200, 1600',
+            sizes: '100vw',
+            class: 'guara-banner__image guara-banner__image--mobile',
+            alt: selected_mobile.alt
+        }}
+      {%- else -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'guara-banner__placeholder' }}
+      {%- endif -%}
+    </div>
+
+    <div class="guara-banner__overlay"></div>
+
+    {%- if section.settings.link != blank -%}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  #GuaraBanner-{{ section.id }} {
+    width: 100%;
+    background: var(--guara-banner-bg);
+  }
+
+  #GuaraBanner-{{ section.id }}.guara-banner--full {
+    max-width: none;
+    margin: 0;
+  }
+
+  #GuaraBanner-{{ section.id }}.guara-banner--contained {
+    max-width: {{ section.settings.max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__outer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--guara-banner-bg);
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__link {
+    display: block;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--guara-banner-bg);
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__media--desktop {
+    display: block;
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__media--mobile {
+    display: none;
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__media--desktop.guara-banner__media--adapt {
+    aspect-ratio: var(--guara-banner-desktop-ratio);
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__media--desktop.guara-banner__media--fixed {
+    height: var(--guara-banner-desktop-height);
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__image,
+  #GuaraBanner-{{ section.id }} .guara-banner__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__image--desktop {
+    object-fit: {{ section.settings.desktop_fit }};
+    object-position: {{ section.settings.desktop_position }};
+  }
+
+  #GuaraBanner-{{ section.id }} .guara-banner__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: #000;
+    opacity: var(--guara-banner-overlay);
+  }
+
+  @media screen and (max-width: 749px) {
+    #GuaraBanner-{{ section.id }} .guara-banner__media--desktop {
+      display: none;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__media--mobile {
+      display: block;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__media--mobile.guara-banner__media--adapt {
+      aspect-ratio: var(--guara-banner-mobile-ratio);
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__media--mobile.guara-banner__media--fixed {
+      height: var(--guara-banner-mobile-height);
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__image--mobile {
+      object-fit: {{ section.settings.mobile_fit }};
+      object-position: {{ section.settings.mobile_position }};
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Guara Banner Premium",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container_width",
+      "label": "Recipiente",
+      "options": [
+        {
+          "value": "full",
+          "label": "Ancho completo"
+        },
+        {
+          "value": "contained",
+          "label": "Contenido limitado"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 900,
+      "max": 1800,
+      "step": 50,
+      "unit": "px",
+      "label": "Ancho máximo del contenido",
+      "default": 1400
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen de escritorio"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Imagen móvil"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height_mode",
+      "label": "Altura en escritorio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adaptarse a la imagen"
+        },
+        {
+          "value": "fixed",
+          "label": "Altura personalizada"
+        }
+      ],
+      "default": "adapt"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 180,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura personalizada en escritorio",
+      "default": 400
+    },
+    {
+      "type": "select",
+      "id": "desktop_fit",
+      "label": "Ajuste de imagen en escritorio",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cubrir"
+        },
+        {
+          "value": "contain",
+          "label": "Contener"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "desktop_position",
+      "label": "Posición de imagen en escritorio",
+      "options": [
+        {
+          "value": "left center",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center center",
+          "label": "Centro"
+        },
+        {
+          "value": "right center",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_height_mode",
+      "label": "Altura en móvil",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adaptarse a la imagen"
+        },
+        {
+          "value": "fixed",
+          "label": "Altura personalizada"
+        }
+      ],
+      "default": "adapt"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 180,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "Altura personalizada en móvil",
+      "default": 420
+    },
+    {
+      "type": "select",
+      "id": "mobile_fit",
+      "label": "Ajuste de imagen en móvil",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cubrir"
+        },
+        {
+          "value": "contain",
+          "label": "Contener"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "select",
+      "id": "mobile_position",
+      "label": "Posición de imagen en móvil",
+      "options": [
+        {
+          "value": "left center",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center center",
+          "label": "Centro"
+        },
+        {
+          "value": "right center",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Opacidad de superposición",
+      "default": 0
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Enlace del banner"
+    },
+    {
+      "type": "text",
+      "id": "accessibility_label",
+      "label": "Descripción accesible",
+      "default": "Banner promocional"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guara Banner Premium"
+    }
+  ]
+}
+{% endschema %}
