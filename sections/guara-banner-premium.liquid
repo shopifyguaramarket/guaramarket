@@ -96,15 +96,11 @@
     background: var(--guara-banner-bg);
   }
 
-  #GuaraBanner-{{ section.id }}.guara-banner--full {
+  #GuaraBanner-{{ section.id }} {
+    width: 100%;
     max-width: none;
     margin: 0;
-  }
-
-  #GuaraBanner-{{ section.id }}.guara-banner--contained {
-    max-width: {{ section.settings.max_width }}px;
-    margin-left: auto;
-    margin-right: auto;
+    background: var(--guara-banner-bg);
   }
 
   #GuaraBanner-{{ section.id }} .guara-banner__outer {
@@ -112,6 +108,18 @@
     width: 100%;
     overflow: hidden;
     background: var(--guara-banner-bg);
+  }
+
+  #GuaraBanner-{{ section.id }}.guara-banner--full .guara-banner__outer {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #GuaraBanner-{{ section.id }}.guara-banner--contained .guara-banner__outer {
+    max-width: {{ section.settings.max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #GuaraBanner-{{ section.id }} .guara-banner__link {
