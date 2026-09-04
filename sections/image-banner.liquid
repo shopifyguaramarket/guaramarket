@@ -24,6 +24,10 @@
 {%- endif -%}
 
 {%- style -%}
+  #Banner-{{ section.id }} {
+    background-color: {{ section.settings.banner_background_color }};
+  }
+
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
@@ -182,8 +186,9 @@
 </div>
 
 
+
 <style>
-  /* GUARA MARKET - BANNER DESKTOP / MOBILE */
+  /* GUARA MARKET - SOLO IMAGEN DESKTOP / MOBILE */
   #Banner-{{ section.id }} .banner__media--mobile {
     display: none;
   }
@@ -196,151 +201,6 @@
     #Banner-{{ section.id }} .banner__media--mobile {
       display: {% if section.settings.image_mobile != blank %}block{% else %}none{% endif %};
     }
-
-    #Banner-{{ section.id }} .banner__media--mobile {
-      position: relative !important;
-      width: 100% !important;
-      height: auto !important;
-      aspect-ratio: {{ section.settings.image_mobile.aspect_ratio }} !important;
-      overflow: hidden;
-    }
-
-    #Banner-{{ section.id }} .banner__media--mobile img {
-      position: relative !important;
-      width: 100% !important;
-      height: auto !important;
-      max-width: 100% !important;
-      display: block !important;
-      object-fit: contain !important;
-    }
-
-    {% if section.settings.image_mobile != blank %}
-      #Banner-{{ section.id }}.banner--adapt {
-        height: auto !important;
-        min-height: 0 !important;
-      }
-
-      #Banner-{{ section.id }}.banner--adapt::before,
-      #Banner-{{ section.id }}.banner--adapt .banner__content::before {
-        display: none !important;
-        padding-bottom: 0 !important;
-      }
-    {% endif %}
-  }
-
-  /* GUARA MARKET - FIX DEFINITIVO BANNER MOBILE */
-  @media screen and (max-width: 749px) {
-    {% if section.settings.image_mobile != blank %}
-
-      #Banner-{{ section.id }} {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        min-height: 0 !important;
-        aspect-ratio: {{ section.settings.image_mobile.aspect_ratio }} !important;
-        overflow: hidden !important;
-      }
-
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__content::before {
-        display: none !important;
-        content: none !important;
-        padding-bottom: 0 !important;
-      }
-
-      #Banner-{{ section.id }} .banner__media--desktop {
-        display: none !important;
-      }
-
-      #Banner-{{ section.id }} .banner__media--mobile {
-        display: block !important;
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        aspect-ratio: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-      #Banner-{{ section.id }} .banner__media--mobile img {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        object-fit: contain !important;
-        object-position: center center !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-    {% endif %}
-  }
-
-</style>
-
-<style>
-/* GUARA MARKET - Banner Envíos Gratis */
-[id$="__image_banner_d76JPk"] {
-  height: 260px !important;
-  min-height: 260px !important;
-}
-
-[id$="__image_banner_d76JPk"] .banner__media {
-  height: 260px !important;
-  min-height: 260px !important;
-}
-
-[id$="__image_banner_d76JPk"] .banner__media img {
-  object-fit: contain !important;
-  object-position: center center !important;
-}
-
-@media screen and (max-width: 749px) {
-  [id$="__image_banner_d76JPk"],
-  [id$="__image_banner_d76JPk"] .banner__media {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  [id$="__image_banner_d76JPk"] .banner__media img {
-    object-fit: contain !important;
-  }
-}
-</style>
-
-
-
-<style>
-  /* GUARA MARKET - ALTURA CONTROLADA EN DESKTOP */
-  @media screen and (min-width: 750px) {
-
-    {% if section.settings.image_height != 'adapt' %}
-
-      #Banner-{{ section.id }} {
-        height: {{ section.settings.desktop_banner_height }}px !important;
-        min-height: {{ section.settings.desktop_banner_height }}px !important;
-      }
-
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__content::before {
-        padding-bottom: 0 !important;
-      }
-
-      #Banner-{{ section.id }} .banner__media {
-        height: 100% !important;
-      }
-
-      #Banner-{{ section.id }} .banner__media img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-      }
-
-    {% endif %}
-
   }
 </style>
 
@@ -353,6 +213,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "color",
+      "id": "banner_background_color",
+      "label": "Color de fondo del banner",
+      "default": "#FFFFFF"
+    },
     {
       "type": "image_picker",
       "id": "image",
