@@ -9,26 +9,26 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "guara_banner_premium_7n6m3F": {
+      "type": "guara-banner-premium",
+      "name": "Guara Banner Premium",
       "settings": {
-        "banner_container": "full",
-        "desktop_image_fit": "cover",
-        "mobile_image_fit": "cover",
-        "banner_background_color": "#ffffff",
+        "container_width": "full",
+        "max_width": 1400,
         "image": "shopify://shop_images/Diseno_sin_titulo_15.png",
-        "image_mobile": "shopify://shop_images/banner_mobile.png",
-        "desktop_banner_height": 300,
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "image_mobile": "shopify://shop_images/banner_mobile_6b3899dd-0c9a-4199-b9d2-5cfe7e7392e2.png",
+        "desktop_height_mode": "adapt",
+        "desktop_height": 400,
+        "desktop_fit": "cover",
+        "desktop_position": "center center",
+        "mobile_height_mode": "adapt",
+        "mobile_height": 420,
+        "mobile_fit": "cover",
+        "mobile_position": "center center",
+        "background_color": "#FFFFFF",
+        "overlay_opacity": 0,
+        "link": "",
+        "accessibility_label": "Banner promocional"
       }
     },
     "guara_category_slider_kmg7et": {
@@ -212,26 +212,26 @@
         "padding_bottom": 0
       }
     },
-    "image_banner_d76JPk": {
-      "type": "image-banner",
+    "guara_banner_premium_dawikE": {
+      "type": "guara-banner-premium",
+      "name": "Guara Banner Premium",
       "settings": {
-        "banner_container": "full",
-        "desktop_image_fit": "cover",
-        "mobile_image_fit": "cover",
-        "banner_background_color": "#ffffff",
+        "container_width": "contained",
+        "max_width": 1000,
         "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
-        "image_mobile": "shopify://shop_images/envios_gratios.png",
-        "desktop_banner_height": 600,
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "image_mobile": "shopify://shop_images/banner_envio_gratis.png",
+        "desktop_height_mode": "adapt",
+        "desktop_height": 400,
+        "desktop_fit": "cover",
+        "desktop_position": "center center",
+        "mobile_height_mode": "adapt",
+        "mobile_height": 420,
+        "mobile_fit": "cover",
+        "mobile_position": "center center",
+        "background_color": "#FFFFFF",
+        "overlay_opacity": 0,
+        "link": "",
+        "accessibility_label": "Banner promocional"
       }
     },
     "featured_collection_WbTdfH": {
@@ -261,28 +261,6 @@
         "swipe_on_mobile": true,
         "padding_top": 20,
         "padding_bottom": 16
-      }
-    },
-    "guara_banner_premium_dawikE": {
-      "type": "guara-banner-premium",
-      "name": "Guara Banner Premium",
-      "settings": {
-        "container_width": "contained",
-        "max_width": 1000,
-        "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
-        "image_mobile": "shopify://shop_images/banner_envio_gratis.png",
-        "desktop_height_mode": "adapt",
-        "desktop_height": 400,
-        "desktop_fit": "cover",
-        "desktop_position": "center center",
-        "mobile_height_mode": "adapt",
-        "mobile_height": 420,
-        "mobile_fit": "cover",
-        "mobile_position": "center center",
-        "background_color": "#FFFFFF",
-        "overlay_opacity": 0,
-        "link": "",
-        "accessibility_label": "Banner promocional"
       }
     },
     "featured_collection_WdPzDR": {
@@ -326,14 +304,13 @@
     }
   },
   "order": [
-    "image_banner",
+    "guara_banner_premium_7n6m3F",
     "guara_category_slider_kmg7et",
     "guara_offers_8fmaC7",
     "featured_collection_PATaJw",
     "featured_collection_wVtTKf",
-    "image_banner_d76JPk",
-    "featured_collection_WbTdfH",
     "guara_banner_premium_dawikE",
+    "featured_collection_WbTdfH",
     "featured_collection_WdPzDR",
     "custom_liquid_kJJ9eJ"
   ]
