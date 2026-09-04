@@ -22,11 +22,24 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "title_color": "#2d6493",
+            "title_size_desktop": 40,
+            "title_size_mobile": 30,
+            "title_weight": "400"
+          }
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+            "price_color": "#2d6493",
+            "price_size": 18,
+            "price_weight": "700",
+            "compare_price_color": "#9aafc1",
+            "badge_background": "#ff8702",
+            "badge_text_color": "#ffffff",
+            "badge_radius": 16
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -76,12 +89,17 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
+        "guara_buy_bg": "#2d6493",
+        "guara_buy_text": "#ffffff",
+        "guara_whatsapp_bg": "#ffffff",
+        "guara_whatsapp_text": "#159447",
+        "guara_whatsapp_border": "#25d366",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -140,6 +158,7 @@
         "collapsible_row_az3bgU",
         "collapsible_row_eXexAY"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
         "heading": "",
