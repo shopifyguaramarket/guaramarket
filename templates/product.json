@@ -22,11 +22,24 @@
         },
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "title_color": "#2d6493",
+            "title_size_desktop": 40,
+            "title_size_mobile": 30,
+            "title_weight": "500"
+          }
         },
         "price": {
           "type": "price",
-          "settings": {}
+          "settings": {
+            "price_color": "#B51A1A",
+            "price_size": 25,
+            "price_weight": "700",
+            "compare_price_color": "#9aafc1",
+            "badge_background": "#B51A1A",
+            "badge_text_color": "#ffffff",
+            "badge_radius": 25
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -111,6 +124,11 @@
         "mobile_thumbnails": "show",
         "hide_variants": false,
         "enable_video_looping": false,
+        "guara_buy_bg": "#2d6493",
+        "guara_buy_text": "#ffffff",
+        "guara_whatsapp_bg": "#ffffff",
+        "guara_whatsapp_text": "#159447",
+        "guara_whatsapp_border": "#25d366",
         "padding_top": 36,
         "padding_bottom": 12
       }
@@ -170,9 +188,10 @@
         "collapsible_row_az3bgU",
         "collapsible_row_eXexAY"
       ],
+      "disabled": true,
       "settings": {
         "caption": "",
-        "heading": "",
+        "heading": "<strong>Productos que te podrían interesar</strong>",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
@@ -188,7 +207,7 @@
     "featured_collection_6kEQ88": {
       "type": "featured-collection",
       "settings": {
-        "title": "",
+        "title": "<strong>Productos que te podrían interesar</strong>",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
