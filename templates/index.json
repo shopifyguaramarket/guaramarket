@@ -216,7 +216,7 @@
       "type": "guara-banner-premium",
       "name": "Guara Banner Premium",
       "settings": {
-        "container_width": "contained",
+        "container_width": "full",
         "max_width": 1000,
         "image": "shopify://shop_images/Diseno_sin_titulo_16.png",
         "image_mobile": "shopify://shop_images/banner_envio_gratis.png",
