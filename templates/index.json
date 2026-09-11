@@ -270,6 +270,7 @@
           "type": "banner",
           "settings": {
             "image_desktop": "shopify://shop_images/ChatGPT_Image_11_sept_2026_04_56_56_p.m..png",
+            "image_mobile": "shopify://shop_images/ChatGPT_Image_11_sept_2026_05_41_36_p.m..png",
             "link": "shopify://products/rodillera-de-compresion-ajustable",
             "alt_text": "Banner promocional"
           }
@@ -295,7 +296,7 @@
         "full_width": true,
         "desktop_height": 270,
         "mobile_height": 180,
-        "image_fit": "contain",
+        "image_fit": "cover",
         "gap": 16,
         "mobile_gap": 12,
         "radius": 12,
