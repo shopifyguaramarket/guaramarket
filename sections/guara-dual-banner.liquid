@@ -128,6 +128,117 @@
   }
 </style>
 
+{% if section.settings.enable_mobile_carousel %}
+<style>
+/* GUARA DOBLE BANNER - CARRUSEL MOBILE */
+@media screen and (max-width: 749px) {
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: {{ section.settings.mobile_gap }}px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__item {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__dots {
+    display: none;
+  }
+}
+
+.guara-dual-banner__dots {
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 749px) {
+  .guara-dual-banner__dots {
+    display: flex;
+  }
+}
+
+.guara-dual-banner__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c7c7c7;
+  cursor: pointer;
+}
+
+.guara-dual-banner__dot.is-active {
+  width: 20px;
+  border-radius: 999px;
+  background: #2D6493;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const section = document.querySelector('#GuaraDualBanner-{{ section.id }}');
+  if (!section) return;
+
+  const slider = section.querySelector('.guara-dual-banner__grid');
+  const slides = section.querySelectorAll('.guara-dual-banner__item');
+
+  if (!slider || slides.length < 2) return;
+
+  const dotsContainer = document.createElement('div');
+  dotsContainer.className = 'guara-dual-banner__dots';
+
+  slides.forEach((slide, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className =
+      'guara-dual-banner__dot' + (index === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Ver banner ' + (index + 1));
+
+    dot.addEventListener('click', function () {
+      slider.scrollTo({
+        left: slide.offsetLeft,
+        behavior: 'smooth'
+      });
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  slider.insertAdjacentElement('afterend', dotsContainer);
+
+  const dots = dotsContainer.querySelectorAll('.guara-dual-banner__dot');
+
+  slider.addEventListener('scroll', function () {
+    const slideWidth = slider.clientWidth;
+    if (!slideWidth) return;
+
+    const index = Math.round(slider.scrollLeft / slideWidth);
+
+    dots.forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === index);
+    });
+  }, { passive: true });
+});
+</script>
+{% endif %}
+
 {% schema %}
 {
   "name": "Guara - Doble banner",
@@ -135,6 +246,12 @@
   "class": "section",
   "max_blocks": 2,
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_carousel",
+      "label": "Activar carrusel en mobile",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "full_width",
