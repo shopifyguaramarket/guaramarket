@@ -194,6 +194,45 @@
       object-position: {{ section.settings.mobile_position }};
     }
   }
+
+  /* GUARA MARKET - BANNER PREMIUM MOBILE */
+  @media screen and (max-width: 749px) {
+    #GuaraBanner-{{ section.id }} {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__outer {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__media--mobile {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__media--mobile.guara-banner__media--adapt {
+      aspect-ratio: var(--guara-banner-mobile-ratio);
+      height: auto;
+    }
+
+    #GuaraBanner-{{ section.id }} .guara-banner__image--mobile {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
 </style>
 
 {% schema %}
