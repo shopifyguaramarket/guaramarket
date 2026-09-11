@@ -39,11 +39,28 @@
         "padding_bottom": 28
       }
     },
+    "guara_countdown_xW4wXy": {
+      "type": "guara-countdown",
+      "name": "Guara - Cuenta regresiva",
+      "settings": {
+        "eyebrow": "🔥 OFERTA POR TIEMPO LIMITADO",
+        "heading": "Aprovechá antes de que termine",
+        "text": "<p>Precios especiales disponibles hasta finalizar la promoción.</p>",
+        "end_date": "2026-09-20T23:59:59-03:00",
+        "expired_text": "Esta promoción ya finalizó.",
+        "button_label": "Ver ofertas",
+        "button_link": "",
+        "background_color": "#F5F8FC",
+        "text_color": "#2D6493",
+        "accent_color": "#FF8702",
+        "card_color": "#FFFFFF"
+      }
+    },
     "featured_collection_Xx7bUE": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "🔥 <strong>OFERTAS GUARA</strong>",
+        "title": "",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -72,6 +89,7 @@
   "order": [
     "image_banner_UpXK9d",
     "main",
+    "guara_countdown_xW4wXy",
     "featured_collection_Xx7bUE"
   ]
 }
