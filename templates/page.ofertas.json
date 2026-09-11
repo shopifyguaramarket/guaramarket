@@ -112,6 +112,8 @@
       "name": "Guara - Doble banner",
       "settings": {
         "enable_mobile_carousel": true,
+        "enable_autoplay": true,
+        "autoplay_seconds": 5,
         "full_width": true,
         "desktop_height": 270,
         "mobile_height": 160,
@@ -133,37 +135,36 @@
         "featured_collection_CERXjm": {
           "type": "featured_collection",
           "settings": {
-            "collection": "automovil"
+            "collection": "automovil",
+            "custom_image": "shopify://shop_images/7.png"
           }
         },
         "featured_collection_pjEcHt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "gaming-consolas"
+            "collection": "gaming-consolas",
+            "custom_image": "shopify://shop_images/8.png"
           }
         },
         "featured_collection_anDEMk": {
           "type": "featured_collection",
           "settings": {
-            "collection": "smartwatches"
-          }
-        },
-        "featured_collection_EHzUex": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "cocina"
+            "collection": "smartwatches",
+            "custom_image": "shopify://shop_images/2_4fb1b4d9-7414-43cc-bbf1-89ba2f5f119a.png"
           }
         },
         "featured_collection_WVpjiF": {
           "type": "featured_collection",
           "settings": {
-            "collection": "auriculares"
+            "collection": "auriculares",
+            "custom_image": "shopify://shop_images/1_dce546f3-fdcf-42bc-a4aa-e117a04a9150.png"
           }
         },
         "featured_collection_TUWiDa": {
           "type": "featured_collection",
           "settings": {
-            "collection": "maquillaje"
+            "collection": "maquillaje",
+            "custom_image": "shopify://shop_images/3_b875a9f6-3a72-4284-9604-d99a726f720b.png"
           }
         }
       },
@@ -171,22 +172,21 @@
         "featured_collection_CERXjm",
         "featured_collection_pjEcHt",
         "featured_collection_anDEMk",
-        "featured_collection_EHzUex",
         "featured_collection_WVpjiF",
         "featured_collection_TUWiDa"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
-        "title": "Colecciones",
+        "title": "",
         "heading_size": "h2",
-        "image_ratio": "portrait",
-        "columns_desktop": 6,
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 0,
-        "padding_bottom": 36
+        "padding_bottom": 0
       }
     }
   },
