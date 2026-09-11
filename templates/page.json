@@ -39,47 +39,39 @@
         "padding_bottom": 28
       }
     },
-    "rich_text_hdARxA": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_tXnDLQ": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Coméntanos sobre tu marca",
-            "heading_size": "h1"
-          }
-        },
-        "button_VeBCNM": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Etiqueta de botón",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_tXnDLQ",
-        "button_VeBCNM"
-      ],
+    "featured_collection_Xx7bUE": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "title": "Colección destacada",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "cuidado-personal",
+        "products_to_show": 24,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
         "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "image_banner_UpXK9d",
     "main",
-    "rich_text_hdARxA"
+    "featured_collection_Xx7bUE"
   ]
 }
