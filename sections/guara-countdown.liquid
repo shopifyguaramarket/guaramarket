@@ -1,0 +1,336 @@
+{% liquid
+  assign end_date = section.settings.end_date | strip
+%}
+
+<section
+  id="GuaraCountdown-{{ section.id }}"
+  class="guara-countdown"
+  style="
+    --guara-countdown-bg: {{ section.settings.background_color }};
+    --guara-countdown-text: {{ section.settings.text_color }};
+    --guara-countdown-accent: {{ section.settings.accent_color }};
+    --guara-countdown-card: {{ section.settings.card_color }};
+  "
+  data-end-date="{{ end_date | escape }}"
+>
+  <div class="page-width">
+    <div class="guara-countdown__box">
+
+      {% if section.settings.eyebrow != blank %}
+        <div class="guara-countdown__eyebrow">
+          {{ section.settings.eyebrow }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="guara-countdown__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        <div class="guara-countdown__text rte">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+
+      <div class="guara-countdown__timer" data-countdown-timer>
+        <div class="guara-countdown__item">
+          <strong data-days>00</strong>
+          <span>Días</span>
+        </div>
+
+        <div class="guara-countdown__item">
+          <strong data-hours>00</strong>
+          <span>Horas</span>
+        </div>
+
+        <div class="guara-countdown__item">
+          <strong data-minutes>00</strong>
+          <span>Minutos</span>
+        </div>
+
+        <div class="guara-countdown__item">
+          <strong data-seconds>00</strong>
+          <span>Segundos</span>
+        </div>
+      </div>
+
+      <div class="guara-countdown__expired" data-countdown-expired hidden>
+        {{ section.settings.expired_text }}
+      </div>
+
+      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+        <a
+          href="{{ section.settings.button_link }}"
+          class="guara-countdown__button"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #GuaraCountdown-{{ section.id }} {
+    background: var(--guara-countdown-bg);
+    color: var(--guara-countdown-text);
+    padding: 32px 0;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__box {
+    text-align: center;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--guara-countdown-accent);
+    color: #fff;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__heading {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.05;
+    font-weight: 800;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__text {
+    max-width: 720px;
+    margin: 12px auto 0;
+    opacity: .9;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__timer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(90px, 130px));
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__item {
+    background: var(--guara-countdown-card);
+    border-radius: 14px;
+    padding: 16px 10px 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__item strong {
+    display: block;
+    color: var(--guara-countdown-accent);
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #4b5563;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__expired {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    margin-top: 22px;
+    padding: 0 22px;
+    border-radius: 8px;
+    background: var(--guara-countdown-accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #GuaraCountdown-{{ section.id }} .guara-countdown__button:hover {
+    transform: translateY(-1px);
+    opacity: .92;
+  }
+
+  @media screen and (max-width: 749px) {
+    #GuaraCountdown-{{ section.id }} {
+      padding: 24px 0;
+    }
+
+    #GuaraCountdown-{{ section.id }} .guara-countdown__timer {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    #GuaraCountdown-{{ section.id }} .guara-countdown__item {
+      padding: 12px 4px;
+      border-radius: 10px;
+    }
+
+    #GuaraCountdown-{{ section.id }} .guara-countdown__item strong {
+      font-size: 24px;
+    }
+
+    #GuaraCountdown-{{ section.id }} .guara-countdown__item span {
+      font-size: 9px;
+      letter-spacing: 0;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const section = document.getElementById('GuaraCountdown-{{ section.id }}');
+
+    if (!section) return;
+
+    const endDateString = section.dataset.endDate;
+    const timer = section.querySelector('[data-countdown-timer]');
+    const expired = section.querySelector('[data-countdown-expired]');
+
+    const daysEl = section.querySelector('[data-days]');
+    const hoursEl = section.querySelector('[data-hours]');
+    const minutesEl = section.querySelector('[data-minutes]');
+    const secondsEl = section.querySelector('[data-seconds]');
+
+    if (!endDateString) {
+      timer.hidden = true;
+      return;
+    }
+
+    const endDate = new Date(endDateString).getTime();
+
+    if (Number.isNaN(endDate)) {
+      console.warn('Guara Countdown: fecha inválida', endDateString);
+      timer.hidden = true;
+      return;
+    }
+
+    const pad = (value) => String(value).padStart(2, '0');
+
+    const updateCountdown = () => {
+      const now = Date.now();
+      const distance = endDate - now;
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        timer.hidden = true;
+        expired.hidden = false;
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      daysEl.textContent = pad(days);
+      hoursEl.textContent = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
+    };
+
+    updateCountdown();
+
+    const interval = setInterval(updateCountdown, 1000);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Guara - Cuenta regresiva",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta",
+      "default": "🔥 OFERTA POR TIEMPO LIMITADO"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Aprovechá antes de que termine"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Descripción",
+      "default": "<p>Precios especiales disponibles hasta finalizar la promoción.</p>"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Fecha y hora de finalización",
+      "info": "Formato recomendado: 2026-09-20T23:59:59-03:00",
+      "default": "2026-09-20T23:59:59-03:00"
+    },
+    {
+      "type": "text",
+      "id": "expired_text",
+      "label": "Mensaje al finalizar",
+      "default": "Esta promoción ya finalizó."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Ver ofertas"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#F5F8FC"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#2D6493"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Color destacado",
+      "default": "#FF8702"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Color de las cajas",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guara - Cuenta regresiva"
+    }
+  ]
+}
+{% endschema %}
