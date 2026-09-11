@@ -16,7 +16,7 @@
         "banner_container": "full",
         "desktop_image_fit": "cover",
         "mobile_image_fit": "cover",
-        "banner_background_color": "#FFFFFF",
+        "banner_background_color": "#ffffff",
         "image": "shopify://shop_images/Diseno_sin_titulo_15.png",
         "desktop_banner_height": 460,
         "image_overlay_opacity": 0,
@@ -43,7 +43,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "Colección destacada",
+        "title": "🔥 <strong>OFERTAS GUARA</strong>",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -64,8 +64,8 @@
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
