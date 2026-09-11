@@ -25,7 +25,7 @@
         "mobile_height": 420,
         "mobile_fit": "cover",
         "mobile_position": "center center",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "overlay_opacity": 0,
         "link": "",
         "accessibility_label": "Banner promocional"
@@ -228,7 +228,7 @@
         "mobile_height": 420,
         "mobile_fit": "cover",
         "mobile_position": "center center",
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "overlay_opacity": 0,
         "link": "",
         "accessibility_label": "Banner promocional"
@@ -261,6 +261,50 @@
         "swipe_on_mobile": true,
         "padding_top": 20,
         "padding_bottom": 16
+      }
+    },
+    "guara_dual_banner_a6VJXT": {
+      "type": "guara-dual-banner",
+      "blocks": {
+        "banner_3iaeER": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/ChatGPT_Image_11_sept_2026_04_56_56_p.m..png",
+            "link": "shopify://products/rodillera-de-compresion-ajustable",
+            "alt_text": "Banner promocional"
+          }
+        },
+        "banner_8UcWVY": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/ChatGPT_Image_11_sept_2026_04_58_50_p.m..png",
+            "link": "shopify://products/🎮-consola-portatil-r36s",
+            "alt_text": "Banner promocional"
+          }
+        }
+      },
+      "block_order": [
+        "banner_3iaeER",
+        "banner_8UcWVY"
+      ],
+      "name": "Guara - Doble banner",
+      "settings": {
+        "enable_mobile_carousel": true,
+        "enable_autoplay": true,
+        "autoplay_seconds": 5,
+        "full_width": true,
+        "desktop_height": 270,
+        "mobile_height": 180,
+        "image_fit": "contain",
+        "gap": 16,
+        "mobile_gap": 12,
+        "radius": 12,
+        "side_padding": 0,
+        "mobile_side_padding": 0,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "mobile_padding_top": 16,
+        "mobile_padding_bottom": 16
       }
     },
     "featured_collection_WdPzDR": {
@@ -311,6 +355,7 @@
     "featured_collection_wVtTKf",
     "guara_banner_premium_dawikE",
     "featured_collection_WbTdfH",
+    "guara_dual_banner_a6VJXT",
     "featured_collection_WdPzDR",
     "custom_liquid_kJJ9eJ"
   ]
