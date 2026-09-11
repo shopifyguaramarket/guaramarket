@@ -50,10 +50,10 @@
         "expired_text": "Esta promoción ya finalizó.",
         "button_label": "Ver ofertas",
         "button_link": "",
-        "background_color": "#F5F8FC",
-        "text_color": "#2D6493",
-        "accent_color": "#FF8702",
-        "card_color": "#FFFFFF"
+        "background_color": "#f5f8fc",
+        "text_color": "#2d6493",
+        "accent_color": "#ff8702",
+        "card_color": "#ffffff"
       }
     },
     "featured_collection_Xx7bUE": {
@@ -84,12 +84,54 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "guara_dual_banner_xDcLbw": {
+      "type": "guara-dual-banner",
+      "blocks": {
+        "banner_3Djre8": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/ChatGPT_Image_11_sept_2026_04_56_56_p.m..png",
+            "link": "",
+            "alt_text": "Banner promocional"
+          }
+        },
+        "banner_cHxUnA": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify://shop_images/ChatGPT_Image_11_sept_2026_04_58_50_p.m..png",
+            "link": "",
+            "alt_text": "Banner promocional"
+          }
+        }
+      },
+      "block_order": [
+        "banner_3Djre8",
+        "banner_cHxUnA"
+      ],
+      "name": "Guara - Doble banner",
+      "settings": {
+        "full_width": true,
+        "desktop_height": 320,
+        "mobile_height": 220,
+        "image_fit": "contain",
+        "gap": 12,
+        "mobile_gap": 12,
+        "radius": 12,
+        "side_padding": 24,
+        "mobile_side_padding": 12,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "mobile_padding_top": 16,
+        "mobile_padding_bottom": 16
+      }
     }
   },
   "order": [
     "image_banner_UpXK9d",
     "main",
     "guara_countdown_xW4wXy",
-    "featured_collection_Xx7bUE"
+    "featured_collection_Xx7bUE",
+    "guara_dual_banner_xDcLbw"
   ]
 }
