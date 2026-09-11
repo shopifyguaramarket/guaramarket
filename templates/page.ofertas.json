@@ -82,7 +82,7 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "guara_dual_banner_xDcLbw": {
@@ -111,9 +111,10 @@
       ],
       "name": "Guara - Doble banner",
       "settings": {
+        "enable_mobile_carousel": true,
         "full_width": true,
-        "desktop_height": 320,
-        "mobile_height": 220,
+        "desktop_height": 270,
+        "mobile_height": 160,
         "image_fit": "contain",
         "gap": 12,
         "mobile_gap": 0,
@@ -125,6 +126,68 @@
         "mobile_padding_top": 16,
         "mobile_padding_bottom": 16
       }
+    },
+    "collection_list_YiTXc4": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_CERXjm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "automovil"
+          }
+        },
+        "featured_collection_pjEcHt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gaming-consolas"
+          }
+        },
+        "featured_collection_anDEMk": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "smartwatches"
+          }
+        },
+        "featured_collection_EHzUex": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cocina"
+          }
+        },
+        "featured_collection_WVpjiF": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "auriculares"
+          }
+        },
+        "featured_collection_TUWiDa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "maquillaje"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_CERXjm",
+        "featured_collection_pjEcHt",
+        "featured_collection_anDEMk",
+        "featured_collection_EHzUex",
+        "featured_collection_WVpjiF",
+        "featured_collection_TUWiDa"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Colecciones",
+        "heading_size": "h2",
+        "image_ratio": "portrait",
+        "columns_desktop": 6,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -132,6 +195,7 @@
     "main",
     "guara_countdown_xW4wXy",
     "featured_collection_Xx7bUE",
-    "guara_dual_banner_xDcLbw"
+    "guara_dual_banner_xDcLbw",
+    "collection_list_YiTXc4"
   ]
 }
