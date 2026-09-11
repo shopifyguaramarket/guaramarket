@@ -652,3 +652,52 @@
   ]
 }
 {% endschema %}
+
+<style>
+/* GUARA MARKET - FIX DEFINITIVO BANNERS MOBILE */
+@media screen and (max-width: 749px) {
+
+  #GuaraDualBanner-{{ section.id }} {
+    width: 100%;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__full {
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid {
+    width: 100%;
+    gap: 0 !important;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__item {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 0 !important;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__link,
+  #GuaraDualBanner-{{ section.id }} picture {
+    display: block;
+    width: 100%;
+    height: auto !important;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__image {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__dots {
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+  }
+}
+</style>
