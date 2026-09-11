@@ -129,114 +129,321 @@
 </style>
 
 {% if section.settings.enable_mobile_carousel %}
-<style>
-/* GUARA DOBLE BANNER - CARRUSEL MOBILE */
-@media screen and (max-width: 749px) {
-  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid {
-    display: flex !important;
-    grid-template-columns: none !important;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: {{ section.settings.mobile_gap }}px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
 
-  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid::-webkit-scrollbar {
-    display: none;
+<style>
+/* =======================================================
+   GUARA MARKET - CARRUSEL DE PROMOCIONES
+   Desktop: 2 banners
+   Mobile: 1 banner
+   ======================================================= */
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid {
+  display: flex !important;
+  grid-template-columns: none !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid::-webkit-scrollbar {
+  display: none;
+}
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__item {
+  flex: 0 0 calc((100% - var(--dual-gap)) / 2);
+  width: calc((100% - var(--dual-gap)) / 2);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #c5cbd3;
+  cursor: pointer;
+  transition:
+    width .25s ease,
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+#GuaraDualBanner-{{ section.id }} .guara-dual-banner__dot.is-active {
+  width: 24px;
+  background: #2D6493;
+}
+
+@media screen and (max-width: 749px) {
+
+  #GuaraDualBanner-{{ section.id }} .guara-dual-banner__grid {
+    gap: {{ section.settings.mobile_gap }}px;
   }
 
   #GuaraDualBanner-{{ section.id }} .guara-dual-banner__item {
     flex: 0 0 100%;
     width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
-}
 
-@media screen and (min-width: 750px) {
   #GuaraDualBanner-{{ section.id }} .guara-dual-banner__dots {
-    display: none;
+    margin-top: 10px;
   }
-}
-
-.guara-dual-banner__dots {
-  justify-content: center;
-  align-items: center;
-  gap: 7px;
-  margin-top: 10px;
-}
-
-@media screen and (max-width: 749px) {
-  .guara-dual-banner__dots {
-    display: flex;
-  }
-}
-
-.guara-dual-banner__dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #c7c7c7;
-  cursor: pointer;
-}
-
-.guara-dual-banner__dot.is-active {
-  width: 20px;
-  border-radius: 999px;
-  background: #2D6493;
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const section = document.querySelector('#GuaraDualBanner-{{ section.id }}');
-  if (!section) return;
+(() => {
+  const section = document.getElementById('GuaraDualBanner-{{ section.id }}');
+
+  if (!section || section.dataset.carouselInitialized === 'true') return;
+
+  section.dataset.carouselInitialized = 'true';
 
   const slider = section.querySelector('.guara-dual-banner__grid');
-  const slides = section.querySelectorAll('.guara-dual-banner__item');
+  const slides = Array.from(
+    section.querySelectorAll('.guara-dual-banner__item')
+  );
 
   if (!slider || slides.length < 2) return;
 
+  const autoplayEnabled =
+    {{ section.settings.enable_autoplay | json }};
+
+  const autoplayDelay =
+    {{ section.settings.autoplay_seconds | default: 5 }} * 1000;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  let resizeTimer = null;
+
+  /* ---------------------------------------------
+     CUÁNTOS BANNERS SE VEN
+     --------------------------------------------- */
+  const visibleSlides = () => {
+    return window.innerWidth <= 749 ? 1 : 2;
+  };
+
+  const maxIndex = () => {
+    return Math.max(0, slides.length - visibleSlides());
+  };
+
+  /* ---------------------------------------------
+     INDICADORES
+     --------------------------------------------- */
   const dotsContainer = document.createElement('div');
   dotsContainer.className = 'guara-dual-banner__dots';
-
-  slides.forEach((slide, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className =
-      'guara-dual-banner__dot' + (index === 0 ? ' is-active' : '');
-    dot.setAttribute('aria-label', 'Ver banner ' + (index + 1));
-
-    dot.addEventListener('click', function () {
-      slider.scrollTo({
-        left: slide.offsetLeft,
-        behavior: 'smooth'
-      });
-    });
-
-    dotsContainer.appendChild(dot);
-  });
+  dotsContainer.setAttribute('aria-label', 'Promociones');
 
   slider.insertAdjacentElement('afterend', dotsContainer);
 
-  const dots = dotsContainer.querySelectorAll('.guara-dual-banner__dot');
+  const buildDots = () => {
+    dotsContainer.innerHTML = '';
 
-  slider.addEventListener('scroll', function () {
-    const slideWidth = slider.clientWidth;
-    if (!slideWidth) return;
+    const totalPositions = maxIndex() + 1;
 
-    const index = Math.round(slider.scrollLeft / slideWidth);
+    for (let index = 0; index < totalPositions; index++) {
+      const dot = document.createElement('button');
 
-    dots.forEach((dot, dotIndex) => {
-      dot.classList.toggle('is-active', dotIndex === index);
+      dot.type = 'button';
+      dot.className = 'guara-dual-banner__dot';
+
+      if (index === currentIndex) {
+        dot.classList.add('is-active');
+      }
+
+      dot.setAttribute(
+        'aria-label',
+        'Ver promoción ' + (index + 1)
+      );
+
+      dot.addEventListener('click', () => {
+        goToSlide(index);
+        restartAutoplay();
+      });
+
+      dotsContainer.appendChild(dot);
+    }
+  };
+
+  const updateDots = () => {
+    const dots = dotsContainer.querySelectorAll(
+      '.guara-dual-banner__dot'
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle(
+        'is-active',
+        index === currentIndex
+      );
     });
-  }, { passive: true });
-});
+  };
+
+  /* ---------------------------------------------
+     MOVER CARRUSEL
+     --------------------------------------------- */
+  const goToSlide = (index, behavior = 'smooth') => {
+
+    const lastIndex = maxIndex();
+
+    if (index > lastIndex) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = lastIndex;
+    }
+
+    currentIndex = index;
+
+    const targetSlide = slides[currentIndex];
+
+    if (!targetSlide) return;
+
+    slider.scrollTo({
+      left: targetSlide.offsetLeft - slider.offsetLeft,
+      behavior
+    });
+
+    updateDots();
+  };
+
+  /* ---------------------------------------------
+     AUTOPLAY
+     --------------------------------------------- */
+  const stopAutoplay = () => {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  };
+
+  const startAutoplay = () => {
+
+    stopAutoplay();
+
+    if (!autoplayEnabled || slides.length < 2) return;
+
+    autoplayTimer = setInterval(() => {
+
+      let nextIndex = currentIndex + 1;
+
+      if (nextIndex > maxIndex()) {
+        nextIndex = 0;
+      }
+
+      goToSlide(nextIndex);
+
+    }, autoplayDelay);
+  };
+
+  const restartAutoplay = () => {
+    stopAutoplay();
+    startAutoplay();
+  };
+
+  /* ---------------------------------------------
+     DETECTAR SWIPE MANUAL
+     --------------------------------------------- */
+  let scrollTimeout;
+
+  slider.addEventListener(
+    'scroll',
+    () => {
+
+      clearTimeout(scrollTimeout);
+
+      scrollTimeout = setTimeout(() => {
+
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        slides.forEach((slide, index) => {
+
+          if (index > maxIndex()) return;
+
+          const distance = Math.abs(
+            slider.scrollLeft -
+            (slide.offsetLeft - slider.offsetLeft)
+          );
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+
+        });
+
+        currentIndex = closestIndex;
+
+        updateDots();
+
+      }, 80);
+
+    },
+    { passive: true }
+  );
+
+  /* ---------------------------------------------
+     PAUSAR AL INTERACTUAR
+     --------------------------------------------- */
+  slider.addEventListener('touchstart', stopAutoplay, {
+    passive: true
+  });
+
+  slider.addEventListener('touchend', restartAutoplay, {
+    passive: true
+  });
+
+  section.addEventListener('mouseenter', stopAutoplay);
+  section.addEventListener('mouseleave', startAutoplay);
+
+  section.addEventListener('focusin', stopAutoplay);
+  section.addEventListener('focusout', startAutoplay);
+
+  /* ---------------------------------------------
+     RESPONSIVE
+     --------------------------------------------- */
+  window.addEventListener('resize', () => {
+
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+
+      currentIndex = Math.min(
+        currentIndex,
+        maxIndex()
+      );
+
+      buildDots();
+
+      goToSlide(currentIndex, 'auto');
+
+    }, 150);
+
+  });
+
+  /* ---------------------------------------------
+     INICIO
+     --------------------------------------------- */
+  buildDots();
+  goToSlide(0, 'auto');
+  startAutoplay();
+
+})();
 </script>
+
 {% endif %}
 
 {% schema %}
@@ -244,13 +451,29 @@ document.addEventListener('DOMContentLoaded', function () {
   "name": "Guara - Doble banner",
   "tag": "section",
   "class": "section",
-  "max_blocks": 2,
+  "max_blocks": 5,
   "settings": [
     {
       "type": "checkbox",
       "id": "enable_mobile_carousel",
-      "label": "Activar carrusel en mobile",
+      "label": "Activar carrusel de promociones",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Cambio automático",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_seconds",
+      "label": "Tiempo entre promociones",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
     },
     {
       "type": "checkbox",
