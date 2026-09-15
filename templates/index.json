@@ -133,9 +133,10 @@
         "description": "Los productos que nuestros clientes están eligiendo.",
         "collection": "mas-vendidos",
         "products_to_show": 8,
+        "enable_carousel": true,
         "show_button": true,
         "button_label": "Ver todos",
-        "background": "#FFFFFF",
+        "background": "#ffffff",
         "padding_top": 40,
         "padding_bottom": 40,
         "mobile_padding_top": 28,
@@ -169,35 +170,6 @@
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 16,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection_PATaJw": {
-      "type": "featured-collection",
-      "name": "Tecnologia",
-      "settings": {
-        "title": "Tecnología",
-        "heading_size": "h1",
-        "description": "<p>Tecnología que te simplifica el día</p>",
-        "show_description": true,
-        "description_style": "subtitle",
-        "collection": "tecnologia",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 20,
         "padding_bottom": 0
       }
     },
@@ -354,6 +326,35 @@
         "padding_bottom": 0
       }
     },
+    "featured_collection_PATaJw": {
+      "type": "featured-collection",
+      "name": "Tecnologia",
+      "settings": {
+        "title": "Tecnología",
+        "heading_size": "h1",
+        "description": "<p>Tecnología que te simplifica el día</p>",
+        "show_description": true,
+        "description_style": "subtitle",
+        "collection": "tecnologia",
+        "products_to_show": 25,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
     "custom_liquid_kJJ9eJ": {
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
@@ -370,12 +371,12 @@
     "guara_category_slider_kmg7et",
     "guara_best_sellers_PpjcNp",
     "guara_offers_8fmaC7",
-    "featured_collection_PATaJw",
     "featured_collection_wVtTKf",
     "guara_banner_premium_dawikE",
     "featured_collection_WbTdfH",
     "guara_dual_banner_a6VJXT",
     "featured_collection_WdPzDR",
+    "featured_collection_PATaJw",
     "custom_liquid_kJJ9eJ"
   ]
 }
