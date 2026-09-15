@@ -333,6 +333,192 @@
     }
   }
 
+
+  /* =====================================================
+     GUARA MARKET - SUPEROFERTAS
+     ===================================================== */
+
+  .guara-superoffers {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+  }
+
+  .guara-superoffers__info {
+    padding: 24px 4px;
+  }
+
+  .guara-superoffers__title {
+    margin: 14px 0 8px;
+    color: #2D6493;
+    font-size: 30px;
+    line-height: 1.08;
+    font-weight: 800;
+  }
+
+  .guara-superoffers__description {
+    margin-bottom: 16px;
+    color: #607486;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .guara-superoffers__countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 8px 0 20px;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: #fff0e7;
+    color: #243746;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .guara-superoffers__countdown strong {
+    color: #C4301C;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .guara-superoffers__clock {
+    color: #C4301C;
+    font-size: 14px;
+  }
+
+  .guara-superoffers__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 22px;
+    border-radius: 8px;
+    background: #FF8702;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: .2s ease;
+  }
+
+  .guara-superoffers__cta:hover {
+    background: #2D6493;
+    color: #fff;
+  }
+
+  .guara-superoffers__products {
+    min-width: 0;
+    position: relative;
+  }
+
+  .guara-superoffers__products slider-component {
+    position: relative;
+  }
+
+  /* 4 productos grandes visibles */
+  @media screen and (min-width: 990px) {
+    .guara-superoffers__products .product-grid.slider--desktop {
+      scroll-padding-left: 0;
+      gap: 18px;
+    }
+
+    .guara-superoffers__products .product-grid.slider--desktop .grid__item {
+      width: calc((100% - 54px) / 4);
+      max-width: calc((100% - 54px) / 4);
+    }
+
+    /* Flechas laterales estilo ecommerce */
+    .guara-superoffers__products .slider-buttons {
+      position: absolute;
+      top: 42%;
+      left: -18px;
+      right: -18px;
+      margin: 0;
+      min-height: 0;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .guara-superoffers__products .slider-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(45,100,147,.18);
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(0,0,0,.12);
+      color: #2D6493;
+      pointer-events: auto;
+    }
+
+    .guara-superoffers__products .slider-button:hover {
+      background: #2D6493;
+      color: #fff;
+    }
+
+    .guara-superoffers__products .slider-button[disabled] {
+      opacity: .3;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .guara-superoffers {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .guara-superoffers__info {
+      padding: 4px 0 0;
+    }
+
+    .guara-superoffers__title {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .guara-superoffers {
+      display: block;
+    }
+
+    .guara-superoffers__info {
+      padding: 0 15px 12px;
+    }
+
+    .guara-superoffers__title {
+      margin-top: 10px;
+      font-size: 22px;
+    }
+
+    .guara-superoffers__description {
+      display: none;
+    }
+
+    .guara-superoffers__countdown {
+      margin: 5px 0 12px;
+      padding: 7px 11px;
+      font-size: 12px;
+    }
+
+    .guara-superoffers__countdown strong {
+      font-size: 14px;
+    }
+
+    .guara-superoffers__cta {
+      min-height: 38px;
+      padding: 0 17px;
+      font-size: 12px;
+    }
+
+    .guara-superoffers__products .slider-buttons {
+      display: none !important;
+    }
+  }
+
 {%- endstyle -%}
 
 {%- liquid
@@ -363,32 +549,38 @@
     id="guara-offers-{{ section.id }}"
     data-id="{{ section.id }}"
   >
-    <div class="guara-offers__promo page-width">
-      <span class="guara-offers__eyebrow">
-        {{ section.settings.promo_label }}
-      </span>
-    </div>
+    <div class="guara-superoffers page-width">
+      <div class="guara-superoffers__info">
+        <span class="guara-offers__eyebrow">{{ section.settings.promo_label }}</span>
 
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
-      {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h2 class="guara-superoffers__title">
           {{ section.settings.title }}
         </h2>
-      {%- endif -%}
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
-        <div class="collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
-          {%- else -%}
-            {{ section.settings.description -}}
-          {%- endif %}
-        </div>
-      {%- endif -%}
-    </div>
 
+        {% if section.settings.description != blank %}
+          <div class="guara-superoffers__description">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        <div
+          class="guara-superoffers__countdown"
+          data-guara-countdown
+          data-hours="{{ section.settings.countdown_hours }}"
+        >
+          <span class="guara-superoffers__clock">●</span>
+          <span>Acaba en:</span>
+          <strong data-guara-time>--:--:--</strong>
+        </div>
+
+        {% if section.settings.collection != blank %}
+          <a href="{{ section.settings.collection.url }}" class="guara-superoffers__cta">
+            {{ section.settings.button_label }}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="guara-superoffers__products">
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
@@ -482,6 +674,8 @@
         </div>
       {%- endif -%}
     </slider-component>
+      </div>
+    </div>
 
     {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -499,6 +693,50 @@
     {%- endif -%}
   </div>
 </div>
+
+
+<script>
+(function () {
+  function initGuaraCountdowns() {
+    document.querySelectorAll('[data-guara-countdown]').forEach(function (el) {
+      if (el.dataset.initialized === 'true') return;
+      el.dataset.initialized = 'true';
+
+      var hours = parseInt(el.dataset.hours || '24', 10);
+      var key = 'guara-offers-end-' + '{{ section.id }}';
+      var end = parseInt(sessionStorage.getItem(key) || '0', 10);
+
+      if (!end || end <= Date.now()) {
+        end = Date.now() + (hours * 60 * 60 * 1000);
+        sessionStorage.setItem(key, String(end));
+      }
+
+      var output = el.querySelector('[data-guara-time]');
+
+      function update() {
+        var diff = Math.max(0, end - Date.now());
+        var total = Math.floor(diff / 1000);
+
+        var h = Math.floor(total / 3600);
+        var m = Math.floor((total % 3600) / 60);
+        var sec = total % 60;
+
+        output.textContent =
+          String(h).padStart(2, '0') + ':' +
+          String(m).padStart(2, '0') + ':' +
+          String(sec).padStart(2, '0');
+      }
+
+      update();
+      setInterval(update, 1000);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initGuaraCountdowns);
+  document.addEventListener('shopify:section:load', initGuaraCountdowns);
+  initGuaraCountdowns();
+})();
+</script>
 
 {% schema %}
 {
