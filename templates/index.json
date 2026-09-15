@@ -148,6 +148,9 @@
       "name": "🔥 Ofertas Guara",
       "settings": {
         "promo_label": "🔥 OFERTA SEMANAL",
+        "promo_label_size": 20,
+        "countdown_end_date": "2026-10-11",
+        "countdown_end_time": "23:59",
         "title": "Precios especiales por tiempo limitado.",
         "heading_size": "h0",
         "description": "",
