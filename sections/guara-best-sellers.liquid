@@ -57,6 +57,13 @@
         {% endfor %}
       </ul>
 
+      {% if section.settings.enable_carousel %}
+        <div class="guara-best-sellers__carousel-controls">
+          <button type="button" class="guara-best-sellers__carousel-button" data-prev aria-label="Anterior">‹</button>
+          <button type="button" class="guara-best-sellers__carousel-button" data-next aria-label="Siguiente">›</button>
+        </div>
+      {% endif %}
+
       {% if section.settings.show_button %}
         <div class="guara-best-sellers__mobile-action">
           <a
@@ -120,8 +127,11 @@
 }
 
 #GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   gap: 20px;
   padding: 0;
   margin: 0;
@@ -130,6 +140,35 @@
 
 #GuaraBestSellers-{{ section.id }} .guara-best-sellers__item {
   min-width: 0;
+  flex: 0 0 calc((100% - 60px) / 4);
+  scroll-snap-align: start;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid::-webkit-scrollbar {
+  display: none;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__carousel-button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #2D6493;
+  border-radius: 50%;
+  background: #fff;
+  color: #2D6493;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__carousel-button:hover {
+  background: #2D6493;
+  color: #fff;
 }
 
 #GuaraBestSellers-{{ section.id }} .guara-best-sellers__button {
@@ -190,8 +229,11 @@
   }
 
   #GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__item {
+    flex: 0 0 calc((100% - 12px) / 2);
   }
 
   #GuaraBestSellers-{{ section.id }} .guara-best-sellers__button--desktop {
@@ -209,6 +251,28 @@
   }
 }
 </style>
+
+
+
+<script>
+document.addEventListener('click', function(event) {
+  var button = event.target.closest('#GuaraBestSellers-{{ section.id }} [data-prev], #GuaraBestSellers-{{ section.id }} [data-next]');
+  if (!button) return;
+
+  var section = document.getElementById('GuaraBestSellers-{{ section.id }}');
+  var slider = section.querySelector('.guara-best-sellers__grid');
+  var item = slider.querySelector('.guara-best-sellers__item');
+
+  if (!item) return;
+
+  var distance = item.offsetWidth + 20;
+
+  slider.scrollBy({
+    left: button.hasAttribute('data-next') ? distance : -distance,
+    behavior: 'smooth'
+  });
+});
+</script>
 
 {% schema %}
 {
@@ -247,6 +311,12 @@
       "max": 12,
       "step": 1,
       "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_carousel",
+      "label": "Activar carrusel",
+      "default": true
     },
     {
       "type": "checkbox",
