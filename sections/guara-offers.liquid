@@ -589,6 +589,11 @@
   }
 }
 
+
+#shopify-section-{{ section.id }} .guara-offers__eyebrow {
+  font-size: {{ section.settings.promo_label_size }}px !important;
+}
+
 {%- endstyle -%}
 
 {%- liquid
@@ -837,6 +842,30 @@
       "id": "promo_label",
       "label": "Etiqueta promocional",
       "default": "🔥 OFERTA SEMANAL"
+    },
+    {
+      "type": "range",
+      "id": "promo_label_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Tamaño de Oferta Semanal",
+      "default": 16
+    },
+    {
+      "type": "text",
+      "id": "countdown_end_date",
+      "label": "Fecha final de la oferta",
+      "info": "Formato: AAAA-MM-DD. Ejemplo: 2026-09-20",
+      "default": "2026-09-20"
+    },
+    {
+      "type": "text",
+      "id": "countdown_end_time",
+      "label": "Hora final de la oferta",
+      "info": "Formato 24 horas. Ejemplo: 23:59",
+      "default": "23:59"
     },
     {
       "type": "inline_richtext",
