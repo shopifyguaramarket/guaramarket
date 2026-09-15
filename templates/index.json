@@ -157,7 +157,7 @@
         "products_to_show": 24,
         "columns_desktop": 6,
         "full_width": true,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "",
@@ -167,7 +167,7 @@
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 16,
         "padding_bottom": 0
