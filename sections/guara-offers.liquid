@@ -1049,3 +1049,59 @@
   ]
 }
 {% endschema %}
+
+<style>
+/* GUARA MARKET - SUPEROFERTAS AJUSTE CARDS DESKTOP */
+@media screen and (min-width: 990px) {
+
+  .guara-superoffers {
+    grid-template-columns: 290px minmax(0, 1fr) !important;
+    gap: 36px !important;
+    align-items: center;
+  }
+
+  .guara-superoffers__products {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .guara-superoffers__products .product-grid.slider--desktop {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 22px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .guara-superoffers__products .product-grid.slider--desktop::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guara-superoffers__products .product-grid.slider--desktop .grid__item {
+    flex: 0 0 calc((100% - 66px) / 4) !important;
+    width: calc((100% - 66px) / 4) !important;
+    max-width: calc((100% - 66px) / 4) !important;
+    scroll-snap-align: start;
+  }
+
+  .guara-superoffers__products .card-wrapper {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .guara-superoffers__products .card__heading {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  .guara-superoffers__products .price {
+    margin-top: 8px;
+    font-size: 16px !important;
+  }
+
+  .guara-superoffers__products .card__media {
+    margin-bottom: 8px;
+  }
+}
+</style>
