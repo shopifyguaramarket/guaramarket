@@ -124,6 +124,24 @@
         "padding_bottom": 20
       }
     },
+    "guara_best_sellers_PpjcNp": {
+      "type": "guara-best-sellers",
+      "name": "Guara - Más vendidos",
+      "settings": {
+        "eyebrow": "LOS FAVORITOS",
+        "heading": "Más vendidos",
+        "description": "Los productos que nuestros clientes están eligiendo.",
+        "collection": "mas-vendidos",
+        "products_to_show": 8,
+        "show_button": true,
+        "button_label": "Ver todos",
+        "background": "#FFFFFF",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 28,
+        "mobile_padding_bottom": 28
+      }
+    },
     "guara_offers_8fmaC7": {
       "type": "guara-offers",
       "name": "🔥 Ofertas Guara",
@@ -350,6 +368,7 @@
   "order": [
     "guara_banner_premium_7n6m3F",
     "guara_category_slider_kmg7et",
+    "guara_best_sellers_PpjcNp",
     "guara_offers_8fmaC7",
     "featured_collection_PATaJw",
     "featured_collection_wVtTKf",
