@@ -149,7 +149,7 @@
       "settings": {
         "promo_label": "🔥 OFERTA SEMANAL",
         "title": "Precios especiales por tiempo limitado.",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "description": "",
         "show_description": false,
         "description_style": "body",
