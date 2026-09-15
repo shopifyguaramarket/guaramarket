@@ -1,0 +1,234 @@
+<section
+  id="GuaraTrust-{{ section.id }}"
+  class="guara-trust"
+  style="
+    --trust-bg: {{ section.settings.background }};
+    --trust-color: {{ section.settings.text_color }};
+    --trust-icon: {{ section.settings.icon_color }};
+  "
+>
+  <div class="page-width">
+    <div class="guara-trust__grid">
+      {% for block in section.blocks %}
+        <div class="guara-trust__item" {{ block.shopify_attributes }}>
+          <div class="guara-trust__icon" aria-hidden="true">
+            {% case block.settings.icon %}
+              {% when 'secure' %}✓
+              {% when 'shipping' %}🚚
+              {% when 'payment' %}₲
+              {% when 'whatsapp' %}✓
+              {% else %}✓
+            {% endcase %}
+          </div>
+
+          <div>
+            <strong>{{ block.settings.title }}</strong>
+            {% if block.settings.text != blank %}
+              <span>{{ block.settings.text }}</span>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+#GuaraTrust-{{ section.id }} {
+  padding: 18px 0;
+  background: var(--trust-bg);
+}
+
+#GuaraTrust-{{ section.id }} .guara-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid rgba(45, 100, 147, .12);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+
+#GuaraTrust-{{ section.id }} .guara-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 82px;
+  padding: 16px 20px;
+  color: var(--trust-color);
+}
+
+#GuaraTrust-{{ section.id }} .guara-trust__item + .guara-trust__item {
+  border-left: 1px solid rgba(45, 100, 147, .12);
+}
+
+#GuaraTrust-{{ section.id }} .guara-trust__icon {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(45, 100, 147, .08);
+  color: var(--trust-icon);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#GuaraTrust-{{ section.id }} strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+#GuaraTrust-{{ section.id }} span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.3;
+  opacity: .7;
+}
+
+@media screen and (max-width: 749px) {
+  #GuaraTrust-{{ section.id }} {
+    padding: 12px 0;
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__grid {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 12px;
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__item {
+    min-height: 78px;
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__item + .guara-trust__item {
+    border-left: 0;
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__item:nth-child(even) {
+    border-left: 1px solid rgba(45, 100, 147, .12);
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__item:nth-child(n+3) {
+    border-top: 1px solid rgba(45, 100, 147, .12);
+  }
+
+  #GuaraTrust-{{ section.id }} .guara-trust__icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  #GuaraTrust-{{ section.id }} strong {
+    font-size: 12px;
+  }
+
+  #GuaraTrust-{{ section.id }} span {
+    font-size: 10px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Guara - Confianza",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Fondo de la sección",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#2D6493"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Color de iconos",
+      "default": "#FF8702"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Beneficio",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icono",
+          "options": [
+            { "value": "secure", "label": "Compra segura" },
+            { "value": "shipping", "label": "Envíos" },
+            { "value": "payment", "label": "Pago" },
+            { "value": "whatsapp", "label": "Atención" }
+          ],
+          "default": "secure"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Compra segura"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Comprá con confianza"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Guara - Confianza",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "secure",
+            "title": "Compra 100% segura",
+            "text": "Comprá con confianza"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shipping",
+            "title": "Envíos a todo Paraguay",
+            "text": "Llegamos hasta vos"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "payment",
+            "title": "Pagá al recibir",
+            "text": "Fácil y seguro"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "whatsapp",
+            "title": "Atención por WhatsApp",
+            "text": "Estamos para ayudarte"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
