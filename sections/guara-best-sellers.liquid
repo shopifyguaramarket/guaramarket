@@ -1,0 +1,316 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="GuaraBestSellers-{{ section.id }}"
+  class="guara-best-sellers"
+>
+  <div class="page-width">
+
+    <div class="guara-best-sellers__header">
+      <div>
+        {% if section.settings.eyebrow != blank %}
+          <span class="guara-best-sellers__eyebrow">
+            {{ section.settings.eyebrow }}
+          </span>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="guara-best-sellers__heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <p class="guara-best-sellers__description">
+            {{ section.settings.description }}
+          </p>
+        {% endif %}
+      </div>
+
+      {% if section.settings.collection != blank and section.settings.show_button %}
+        <a
+          href="{{ section.settings.collection.url }}"
+          class="guara-best-sellers__button guara-best-sellers__button--desktop"
+        >
+          {{ section.settings.button_label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.settings.collection != blank %}
+      <ul class="guara-best-sellers__grid" role="list">
+        {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
+          <li class="guara-best-sellers__item">
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: 'square',
+              image_shape: 'default',
+              show_secondary_image: false,
+              show_vendor: false,
+              show_rating: false,
+              lazy_load: true,
+              section_id: section.id
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% if section.settings.show_button %}
+        <div class="guara-best-sellers__mobile-action">
+          <a
+            href="{{ section.settings.collection.url }}"
+            class="guara-best-sellers__button"
+          >
+            {{ section.settings.button_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      {% endif %}
+
+    {% else %}
+
+      <div class="guara-best-sellers__empty">
+        Elegí una colección desde el editor de Shopify.
+      </div>
+
+    {% endif %}
+
+  </div>
+</section>
+
+<style>
+#GuaraBestSellers-{{ section.id }} {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+  background: {{ section.settings.background }};
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__eyebrow {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #FF8702;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__heading {
+  margin: 0;
+  color: #2D6493;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__description {
+  margin: 9px 0 0;
+  color: rgba(18, 18, 18, .68);
+  font-size: 15px;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__item {
+  min-width: 0;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border: 1px solid #2D6493;
+  border-radius: 999px;
+  color: #2D6493;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__button:hover {
+  color: #fff;
+  background: #2D6493;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__mobile-action {
+  display: none;
+}
+
+#GuaraBestSellers-{{ section.id }} .guara-best-sellers__empty {
+  padding: 30px;
+  border: 1px dashed #d8d8d8;
+  border-radius: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 989px) {
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  #GuaraBestSellers-{{ section.id }} {
+    padding-top: {{ section.settings.mobile_padding_top }}px;
+    padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__header {
+    margin-bottom: 18px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__heading {
+    font-size: 25px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__description {
+    font-size: 14px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__button--desktop {
+    display: none;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__mobile-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  #GuaraBestSellers-{{ section.id }} .guara-best-sellers__button {
+    width: 100%;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Guara - Más vendidos",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Etiqueta",
+      "default": "LOS FAVORITOS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Más vendidos"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Descripción",
+      "default": "Los productos que nuestros clientes están eligiendo."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Cantidad de productos",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Mostrar botón Ver todos",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Ver todos"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Color de fondo",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacio superior desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacio inferior desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Espacio superior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Espacio inferior mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guara - Más vendidos"
+    }
+  ]
+}
+{% endschema %}
