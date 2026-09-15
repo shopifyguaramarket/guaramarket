@@ -364,6 +364,56 @@
         "padding_top": 0,
         "padding_bottom": 8
       }
+    },
+    "guara_trust_bar_cQeq67": {
+      "type": "guara-trust-bar",
+      "blocks": {
+        "benefit_nb3Nbt": {
+          "type": "benefit",
+          "settings": {
+            "icon": "secure",
+            "title": "Compra 100% segura",
+            "text": "Comprá con confianza"
+          }
+        },
+        "benefit_7NbVRw": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shipping",
+            "title": "Envíos a todo Paraguay",
+            "text": "Llegamos hasta vos"
+          }
+        },
+        "benefit_8QbiAk": {
+          "type": "benefit",
+          "settings": {
+            "icon": "payment",
+            "title": "Pagá al recibir",
+            "text": "Fácil y seguro"
+          }
+        },
+        "benefit_833PNL": {
+          "type": "benefit",
+          "settings": {
+            "icon": "whatsapp",
+            "title": "Atención por WhatsApp",
+            "text": "Estamos para ayudarte"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_nb3Nbt",
+        "benefit_7NbVRw",
+        "benefit_8QbiAk",
+        "benefit_833PNL"
+      ],
+      "disabled": true,
+      "name": "Guara - Confianza",
+      "settings": {
+        "background": "#FFFFFF",
+        "text_color": "#2D6493",
+        "icon_color": "#FF8702"
+      }
     }
   },
   "order": [
@@ -377,6 +427,7 @@
     "guara_dual_banner_a6VJXT",
     "featured_collection_WdPzDR",
     "featured_collection_PATaJw",
-    "custom_liquid_kJJ9eJ"
+    "custom_liquid_kJJ9eJ",
+    "guara_trust_bar_cQeq67"
   ]
 }
