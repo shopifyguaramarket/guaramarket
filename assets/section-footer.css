@@ -1151,3 +1151,37 @@
   }
 }
 
+
+/* GUARA MARKET - FIX LOGO FOOTER DESKTOP */
+@media screen and (min-width: 990px) {
+
+  .footer__blocks-wrapper {
+    grid-template-columns:
+      210px
+      minmax(300px, 1.5fr)
+      minmax(260px, 1.2fr)
+      minmax(220px, 1fr)
+      minmax(180px, .8fr) !important;
+  }
+
+  .footer-block-image {
+    width: 100% !important;
+    max-width: 210px !important;
+    overflow: visible !important;
+  }
+
+  .footer-block-image .footer-block__image-wrapper {
+    width: 150px !important;
+    max-width: 150px !important;
+    overflow: visible !important;
+  }
+
+  .footer-block-image img {
+    display: block !important;
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
