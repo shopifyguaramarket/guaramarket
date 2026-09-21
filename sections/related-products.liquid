@@ -32,7 +32,7 @@
         {{ section.settings.heading }}
       </h2>
       <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.enable_desktop_slider %} guara-related-slider--desktop{% endif %}{% if section.settings.enable_mobile_slider %} guara-related-slider--mobile{% endif %}"
         role="list"
       >
         {% assign skip_card_product_styles = false %}
@@ -57,6 +57,159 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
+
+
+<style>
+  /* GUARA MARKET - CARRUSEL PRODUCTOS RELACIONADOS */
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .guara-related-slider--desktop {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      gap: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .guara-related-slider--desktop::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .guara-related-slider--desktop > .grid__item {
+      flex: 0 0 calc((100% - 60px) / 4);
+      width: calc((100% - 60px) / 4);
+      max-width: calc((100% - 60px) / 4);
+      scroll-snap-align: start;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .guara-related-slider--mobile {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      gap: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .guara-related-slider--mobile::-webkit-scrollbar {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .guara-related-slider--mobile > .grid__item {
+      flex: 0 0 calc(50% - 6px);
+      width: calc(50% - 6px);
+      max-width: calc(50% - 6px);
+      scroll-snap-align: start;
+    }
+  }
+
+  .guara-related-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .guara-related-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(45, 100, 147, .18);
+    background: #fff;
+    color: #2D6493;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  }
+
+  .guara-related-arrow:hover {
+    background: #2D6493;
+    color: #fff;
+  }
+
+  @media screen and (max-width: 749px) {
+    .guara-related-controls {
+      display: none;
+    }
+  }
+</style>
+
+{% if section.settings.enable_desktop_slider %}
+  <div class="guara-related-controls">
+    <button
+      type="button"
+      class="guara-related-arrow"
+      data-guara-related-prev="{{ section.id }}"
+      aria-label="Productos anteriores"
+    >
+      ‹
+    </button>
+
+    <button
+      type="button"
+      class="guara-related-arrow"
+      data-guara-related-next="{{ section.id }}"
+      aria-label="Productos siguientes"
+    >
+      ›
+    </button>
+  </div>
+{% endif %}
+
+<script>
+  (function () {
+    function initGuaraRelated() {
+      const section = document.getElementById('shopify-section-{{ section.id }}');
+      if (!section) return;
+
+      const slider = section.querySelector('.product-grid');
+      const prev = section.querySelector('[data-guara-related-prev="{{ section.id }}"]');
+      const next = section.querySelector('[data-guara-related-next="{{ section.id }}"]');
+
+      if (!slider) return;
+
+      const move = () => {
+        const item = slider.querySelector('.grid__item');
+        if (!item) return slider.clientWidth * 0.8;
+
+        const gap = parseFloat(getComputedStyle(slider).gap) || 20;
+        return item.getBoundingClientRect().width + gap;
+      };
+
+      if (prev) {
+        prev.onclick = function () {
+          slider.scrollBy({
+            left: -move(),
+            behavior: 'smooth'
+          });
+        };
+      }
+
+      if (next) {
+        next.onclick = function () {
+          slider.scrollBy({
+            left: move(),
+            behavior: 'smooth'
+          });
+        };
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', initGuaraRelated);
+    document.addEventListener('shopify:section:load', initGuaraRelated);
+
+    initGuaraRelated();
+  })();
+</script>
 
 {% schema %}
 {
@@ -214,6 +367,18 @@
     {
       "type": "header",
       "content": "t:sections.related-products.settings.header_mobile.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "Activar carrusel en computadora",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_mobile_slider",
+      "label": "Activar carrusel en móvil",
+      "default": true
     },
     {
       "type": "select",
