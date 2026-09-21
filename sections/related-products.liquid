@@ -59,157 +59,88 @@
 </div>
 
 
+
 <style>
-  /* GUARA MARKET - CARRUSEL PRODUCTOS RELACIONADOS */
+/* ==========================================================
+   GUARA MARKET - PRODUCTOS RELACIONADOS
+   ========================================================== */
 
-  @media screen and (min-width: 750px) {
-    #shopify-section-{{ section.id }} .guara-related-slider--desktop {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      gap: 20px;
-    }
+/* MOBILE */
+@media screen and (max-width: 749px) {
 
-    #shopify-section-{{ section.id }} .guara-related-slider--desktop::-webkit-scrollbar {
-      display: none;
-    }
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--mobile {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
 
-    #shopify-section-{{ section.id }} .guara-related-slider--desktop > .grid__item {
-      flex: 0 0 calc((100% - 60px) / 4);
-      width: calc((100% - 60px) / 4);
-      max-width: calc((100% - 60px) / 4);
-      scroll-snap-align: start;
-    }
+    gap: 12px !important;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 8px;
   }
 
-  @media screen and (max-width: 749px) {
-    #shopify-section-{{ section.id }} .guara-related-slider--mobile {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      gap: 12px;
-    }
-
-    #shopify-section-{{ section.id }} .guara-related-slider--mobile::-webkit-scrollbar {
-      display: none;
-    }
-
-    #shopify-section-{{ section.id }} .guara-related-slider--mobile > .grid__item {
-      flex: 0 0 calc(50% - 6px);
-      width: calc(50% - 6px);
-      max-width: calc(50% - 6px);
-      scroll-snap-align: start;
-    }
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--mobile::-webkit-scrollbar {
+    display: none;
   }
 
-  .guara-related-controls {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 18px;
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--mobile > .grid__item {
+    flex: 0 0 calc((100% - 12px) / 2) !important;
+    width: calc((100% - 12px) / 2) !important;
+    max-width: calc((100% - 12px) / 2) !important;
+
+    scroll-snap-align: start;
+  }
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 750px) {
+
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--desktop {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    gap: 20px !important;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 10px;
   }
 
-  .guara-related-arrow {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(45, 100, 147, .18);
-    background: #fff;
-    color: #2D6493;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--desktop::-webkit-scrollbar {
+    display: none;
   }
 
-  .guara-related-arrow:hover {
-    background: #2D6493;
-    color: #fff;
-  }
+  #shopify-section-{{ section.id }}
+  .guara-related-slider--desktop > .grid__item {
+    flex: 0 0 calc((100% - 60px) / 4) !important;
+    width: calc((100% - 60px) / 4) !important;
+    max-width: calc((100% - 60px) / 4) !important;
 
-  @media screen and (max-width: 749px) {
-    .guara-related-controls {
-      display: none;
-    }
+    scroll-snap-align: start;
   }
+}
 </style>
-
-{% if section.settings.enable_desktop_slider %}
-  <div class="guara-related-controls">
-    <button
-      type="button"
-      class="guara-related-arrow"
-      data-guara-related-prev="{{ section.id }}"
-      aria-label="Productos anteriores"
-    >
-      ‹
-    </button>
-
-    <button
-      type="button"
-      class="guara-related-arrow"
-      data-guara-related-next="{{ section.id }}"
-      aria-label="Productos siguientes"
-    >
-      ›
-    </button>
-  </div>
-{% endif %}
-
-<script>
-  (function () {
-    function initGuaraRelated() {
-      const section = document.getElementById('shopify-section-{{ section.id }}');
-      if (!section) return;
-
-      const slider = section.querySelector('.product-grid');
-      const prev = section.querySelector('[data-guara-related-prev="{{ section.id }}"]');
-      const next = section.querySelector('[data-guara-related-next="{{ section.id }}"]');
-
-      if (!slider) return;
-
-      const move = () => {
-        const item = slider.querySelector('.grid__item');
-        if (!item) return slider.clientWidth * 0.8;
-
-        const gap = parseFloat(getComputedStyle(slider).gap) || 20;
-        return item.getBoundingClientRect().width + gap;
-      };
-
-      if (prev) {
-        prev.onclick = function () {
-          slider.scrollBy({
-            left: -move(),
-            behavior: 'smooth'
-          });
-        };
-      }
-
-      if (next) {
-        next.onclick = function () {
-          slider.scrollBy({
-            left: move(),
-            behavior: 'smooth'
-          });
-        };
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', initGuaraRelated);
-    document.addEventListener('shopify:section:load', initGuaraRelated);
-
-    initGuaraRelated();
-  })();
-</script>
 
 {% schema %}
 {
@@ -423,10 +354,3 @@
   ]
 }
 {% endschema %}
-
-<style>
-  /* GUARA MARKET - ocultar flechas de productos relacionados */
-  #shopify-section-{{ section.id }} .guara-related-controls {
-    display: none !important;
-  }
-</style>
