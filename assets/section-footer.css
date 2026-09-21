@@ -1185,3 +1185,99 @@
     object-position: center !important;
   }
 }
+
+/* =========================================================
+   GUARA MARKET - FOOTER ACORDEON MOBILE
+   ========================================================= */
+
+/* Desktop y tablet: todo abierto */
+@media screen and (min-width: 750px) {
+  .guara-footer-accordion__trigger {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: default;
+  }
+
+  .guara-footer-accordion__icon {
+    display: none;
+  }
+
+  .guara-footer-accordion__content {
+    display: block !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+
+  .guara-footer-accordion {
+    grid-column: 1 / -1 !important;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    padding-bottom: 0 !important;
+  }
+
+  .guara-footer-accordion__trigger {
+    width: 100%;
+    min-height: 52px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .guara-footer-accordion__trigger .footer-block__heading {
+    margin: 0 !important;
+    font-size: 13px !important;
+  }
+
+  .guara-footer-accordion__icon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform .2s ease;
+  }
+
+  .guara-footer-accordion__content {
+    display: none;
+    padding: 0 0 18px;
+  }
+
+  .guara-footer-accordion.is-open .guara-footer-accordion__content {
+    display: block;
+  }
+
+  .guara-footer-accordion.is-open .guara-footer-accordion__icon {
+    transform: rotate(45deg);
+  }
+
+  .footer__blocks-wrapper {
+    display: block !important;
+  }
+
+  .footer-block-image {
+    margin-bottom: 22px !important;
+  }
+
+  .footer__list-social {
+    margin-top: 22px !important;
+  }
+}
+
