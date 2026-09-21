@@ -41,6 +41,15 @@
             "badge_radius": 25
           }
         },
+        "pedido_verificado_WixwhQ": {
+          "type": "pedido_verificado",
+          "settings": {
+            "guarantee_title": "Pedido Verificado",
+            "guarantee_text": "45 días de garantía",
+            "delivery_title": "Entregas en el día",
+            "delivery_text": "En Asunción y Central"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
@@ -105,6 +114,7 @@
         "vendor",
         "title",
         "price",
+        "pedido_verificado_WixwhQ",
         "quantity_selector",
         "buy_buttons_zn9zji",
         "custom_liquid_HXPKRU",
@@ -149,6 +159,8 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "enable_desktop_slider": true,
+        "enable_mobile_slider": true,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
