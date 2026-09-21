@@ -1281,3 +1281,34 @@
   }
 }
 
+
+/* GUARA MARKET - FIX DEFINITIVO LOGO FOOTER MOBILE */
+@media screen and (max-width: 749px) {
+
+  .footer-block-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: visible !important;
+  }
+
+  .footer-block-image .footer-block__image-wrapper {
+    width: 130px !important;
+    max-width: 130px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    overflow: visible !important;
+  }
+
+  .footer-block-image .footer-block__image-wrapper img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 130px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: 0 auto !important;
+  }
+}
