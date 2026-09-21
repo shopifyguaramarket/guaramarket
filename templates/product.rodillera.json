@@ -29,14 +29,23 @@
             "title_weight": "600"
           }
         },
+        "pedido_verificado_rxpwDa": {
+          "type": "pedido_verificado",
+          "settings": {
+            "guarantee_title": "Pedido Verificado",
+            "guarantee_text": "45 días de garantía",
+            "delivery_title": "Entregas en el día",
+            "delivery_text": "En Asunción y Central"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
-            "price_color": "#C4301C",
+            "price_color": "#c4301c",
             "price_size": 25,
             "price_weight": "700",
-            "compare_price_color": "#2D6493",
-            "badge_background": "#C4301C",
+            "compare_price_color": "#2d6493",
+            "badge_background": "#c4301c",
             "badge_text_color": "#ffffff",
             "badge_radius": 25
           }
@@ -76,6 +85,7 @@
       "block_order": [
         "vendor",
         "title",
+        "pedido_verificado_rxpwDa",
         "price",
         "quantity_selector",
         "buy_buttons_zn9zji",
