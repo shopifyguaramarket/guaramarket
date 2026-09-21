@@ -22,25 +22,41 @@
             "alignment": "center"
           }
         },
+        "text_YWWjMp": {
+          "type": "text",
+          "settings": {
+            "heading": "HORARIO DE ATENCION",
+            "subtext": "<p>Lunes - Viernes: 8hs a 18hs.</p><p>Sábados: 8hs a 17hs.</p><p>Contacto +595 992 813289 </p><p>guaramarketparaguay@gmail.com </p><p>Dirección comercial: Madame Lynch 3351, Asunción, Paraguay.</p>"
+          }
+        },
         "link_list_TjtpxU": {
           "type": "link_list",
           "settings": {
-            "heading": "Enlaces rápidos",
-            "menu": "footer"
+            "heading": "ATENCION AL CLIENTE",
+            "menu": "nosotros"
           }
         },
-        "text_bRBpR3": {
-          "type": "text",
+        "link_list_mmqLwM": {
+          "type": "link_list",
           "settings": {
-            "heading": "<strong>HORARIOS DE ATENCIÓN</strong>",
-            "subtext": "<p>Lunes - Viernes: 8hs a 18hs.</p><p>Sábados: 8hs a 17hs. </p>"
+            "heading": "INFORMACION LEGAL",
+            "menu": "informaci-n-legal"
+          }
+        },
+        "link_list_km7GAe": {
+          "type": "link_list",
+          "settings": {
+            "heading": "GUARAMARKET",
+            "menu": "guaramarket"
           }
         }
       },
       "block_order": [
         "image_NANXJz",
+        "text_YWWjMp",
         "link_list_TjtpxU",
-        "text_bRBpR3"
+        "link_list_mmqLwM",
+        "link_list_km7GAe"
       ],
       "settings": {
         "color_scheme": "scheme-5",
