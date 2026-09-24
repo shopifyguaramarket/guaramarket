@@ -2605,3 +2605,44 @@
   ]
 }
 {% endschema %}
+
+<style>
+/* ==========================================================
+   GUARA MARKET - PDP PRECIO UNIFICADO
+   El control "Tamaño del precio" gobierna ambos precios
+   ========================================================== */
+
+.guara-product-price .price--on-sale .price__sale {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+}
+
+/* PRECIO ACTUAL */
+.guara-product-price .price-item--sale,
+.guara-product-price .price-item--last {
+  font-size: var(--guara-price-size) !important;
+  line-height: 1.2 !important;
+  font-weight: var(--guara-price-weight) !important;
+  color: var(--guara-price-current) !important;
+  white-space: nowrap !important;
+}
+
+/* PRECIO ANTERIOR */
+.guara-product-price .price--on-sale .price-item--regular {
+  font-size: var(--guara-price-size) !important;
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  color: var(--guara-price-old) !important;
+  white-space: nowrap !important;
+  text-decoration: line-through !important;
+}
+
+/* MOBILE */
+@media screen and (max-width: 749px) {
+  .guara-product-price .price--on-sale .price__sale {
+    gap: 8px !important;
+  }
+}
+</style>
