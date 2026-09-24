@@ -32,8 +32,8 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_color": "#2d6493",
-            "price_size": 18,
+            "price_color": "#16C784",
+            "price_size": 20,
             "price_weight": "700",
             "compare_price_color": "#9aafc1",
             "badge_background": "#ff8702",
@@ -140,11 +140,11 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "enable_desktop_slider": true,
+        "enable_mobile_slider": true,
         "columns_mobile": "2",
         "padding_top": 36,
-        "padding_bottom": 28,
-        "enable_desktop_slider": true,
-        "enable_mobile_slider": true
+        "padding_bottom": 28
       }
     },
     "collapsible_content_WyqWDd": {
