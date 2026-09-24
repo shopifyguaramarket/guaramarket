@@ -153,6 +153,7 @@
                     --guara-price-current: {{ block.settings.price_color }};
                     --guara-price-old: {{ block.settings.compare_price_color }};
                     --guara-price-size: {{ block.settings.price_size }}px;
+                    --guara-compare-price-size: {{ block.settings.compare_price_size }}px;
                     --guara-price-weight: {{ block.settings.price_weight }};
                     --guara-badge-bg: {{ block.settings.badge_background }};
                     --guara-badge-text: {{ block.settings.badge_text_color }};
@@ -988,7 +989,7 @@
           "max": 32,
           "step": 1,
           "unit": "px",
-          "label": "Tamaño del precio",
+          "label": "Tamaño precio actual/promocional",
           "default": 18
         },
         {
@@ -1020,6 +1021,16 @@
           "id": "compare_price_color",
           "label": "Color precio anterior",
           "default": "#9AAFC1"
+        },
+        {
+          "type": "range",
+          "id": "compare_price_size",
+          "min": 12,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Tamaño precio anterior/tachado",
+          "default": 16
         },
         {
           "type": "header",
@@ -2631,7 +2642,7 @@
 
 /* PRECIO ANTERIOR */
 .guara-product-price .price--on-sale .price-item--regular {
-  font-size: var(--guara-price-size) !important;
+  font-size: var(--guara-compare-price-size) !important;
   line-height: 1.2 !important;
   font-weight: 400 !important;
   color: var(--guara-price-old) !important;
