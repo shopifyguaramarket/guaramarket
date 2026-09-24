@@ -32,10 +32,11 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_color": "#16C784",
-            "price_size": 20,
+            "price_color": "#16c784",
+            "price_size": 25,
             "price_weight": "700",
-            "compare_price_color": "#2d6493",
+            "compare_price_color": "#22242A",
+            "compare_price_size": 16,
             "badge_background": "#ff8702",
             "badge_text_color": "#ffffff",
             "badge_radius": 16
