@@ -171,3 +171,54 @@
     animation: none !important;
   }
 }
+
+/* ==========================================================
+   GUARA MARKET - TAMAÑO ESTANDAR DE PRECIOS EN CARDS
+   ========================================================== */
+
+/* Mantener precio anterior + precio oferta alineados */
+.card-wrapper .price--on-sale .price__sale,
+.card-information .price--on-sale .price__sale {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+}
+
+/* Precio actual */
+.card-wrapper .price .price-item--sale,
+.card-wrapper .price .price-item--last,
+.card-information .price .price-item--sale,
+.card-information .price .price-item--last {
+  font-size: 20px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* Precio anterior */
+.card-wrapper .price--on-sale .price-item--regular,
+.card-information .price--on-sale .price-item--regular {
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* MOBILE */
+@media screen and (max-width: 749px) {
+  .card-wrapper .price--on-sale .price__sale,
+  .card-information .price--on-sale .price__sale {
+    gap: 6px !important;
+  }
+
+  .card-wrapper .price .price-item--sale,
+  .card-wrapper .price .price-item--last,
+  .card-information .price .price-item--sale,
+  .card-information .price .price-item--last {
+    font-size: 18px !important;
+  }
+
+  .card-wrapper .price--on-sale .price-item--regular,
+  .card-information .price--on-sale .price-item--regular {
+    font-size: 13px !important;
+  }
+}
