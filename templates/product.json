@@ -32,7 +32,7 @@
         "price": {
           "type": "price",
           "settings": {
-            "price_color": "#b51a1a",
+            "price_color": "#16C784",
             "price_size": 30,
             "price_weight": "700",
             "compare_price_color": "#9aafc1",
